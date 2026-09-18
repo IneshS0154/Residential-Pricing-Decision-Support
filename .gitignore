@@ -1,0 +1,26 @@
+# Data
+data/raw/*
+data/processed/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+
+# Jupyter
+*.ipynb_checkpoints
+
+# Reports (generated)
+reports/figures/*
+!reports/figures/.gitkeep
+
+# Other
+CLAUDE.md
