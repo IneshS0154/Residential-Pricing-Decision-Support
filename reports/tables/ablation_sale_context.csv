@@ -1,0 +1,5 @@
+setup,cv_rmse_log,sd_over_folds,delta_vs_all
+all 79 predictors,0.1311,0.0134,0.0
+drop all four sale-context columns,0.1319,0.0139,0.0008
+drop SaleType + SaleCondition only,0.1324,0.014,0.0013
+drop MoSold + YrSold only,0.1312,0.0136,0.0001

@@ -1,0 +1,9 @@
+,RMSE (ft),RMSE sd,MAE (ft)
+"KNN k=5, scaled, extended features",19.0,2.94,11.49
+"KNN k=7, scaled, core features",19.01,3.27,11.79
+"KNN k=5, NOT scaled, core features",19.15,3.13,11.82
+reference: neighborhood ratio x sqrt(LotArea) (EDA),19.45,2.51,11.09
+"KNN k=5, scaled, core features",19.57,3.31,12.04
+"KNN k=3, scaled, core features",20.69,2.99,12.58
+B. neighborhood median,22.09,3.17,13.33
+A. global median,24.11,3.46,16.8

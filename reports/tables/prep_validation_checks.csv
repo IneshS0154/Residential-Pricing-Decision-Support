@@ -1,0 +1,15 @@
+check,result,detail
+"1. Expected columns present, redundant columns absent",PASS,172 columns
+2. No unexpected missing values,PASS,"train 0, test 0"
+3. No infinite values,PASS,
+4. Target excluded,PASS,
+5. Input DataFrame not modified,PASS,X identical after fit/transform
+6. Original numeric values preserved where appropriate,PASS,"unscaled, untransformed columns equal the input"
+7. Encoded categories valid,PASS,ordinal codes within range; one-hot rows sum to 1
+8. Neighborhood median imputation works,PASS,e.g. NWAmes -> 80.0 ft
+9. KNN imputation works,PASS,"imputed range 22-152 ft, observed values unchanged"
+10. Missing indicator is binary,PASS,"values [0, 1]"
+11. Unseen records can be transformed,PASS,1459 test records -> 172 columns
+12. Row count consistent,PASS,1460 -> 1460
+13. Feature names retrievable,PASS,172 names
+14. Reproducible,PASS,two independent fits give identical output

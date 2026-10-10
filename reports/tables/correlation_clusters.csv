@@ -1,0 +1,9 @@
+feature,cluster,abs_spearman_price,suggest_keep
+GrLivArea,13,0.7313095834659141,True
+TotRmsAbvGrd,13,0.532585935116993,False
+GarageCars,16,0.6907109670497434,True
+GarageArea,16,0.6493785338868229,False
+YearBuilt,17,0.6526815462850586,True
+GarageYrBlt,17,0.5632564188677867,False
+TotalBsmtSF,22,0.6027254448924096,True
+1stFlrSF,22,0.5754078354212823,False

@@ -1,0 +1,58 @@
+kind,source attribute,output columns,levels (one-hot only),category
+numeric,LotFrontage,1,,Location and lot
+numeric,LotArea,1,,Location and lot
+numeric,OverallQual,1,,Quality and condition
+numeric,OverallCond,1,,Quality and condition
+numeric,MasVnrArea,1,,Dwelling type and structure
+numeric,TotalBsmtSF,1,,Size
+numeric,GrLivArea,1,,Size
+numeric,BedroomAbvGr,1,,Size
+numeric,KitchenAbvGr,1,,Size
+numeric,Fireplaces,1,,Amenities
+numeric,GarageCars,1,,Size
+numeric,WoodDeckSF,1,,Amenities
+numeric,OpenPorchSF,1,,Amenities
+numeric,EnclosedPorch,1,,Amenities
+numeric,ScreenPorch,1,,Amenities
+numeric,TotalBathrooms,1,,Engineered
+numeric,HouseAge,1,,Engineered
+numeric,RemodAge,1,,Engineered
+ordinal,ExterQual,1,,Quality and condition
+ordinal,ExterCond,1,,Quality and condition
+ordinal,HeatingQC,1,,Quality and condition
+ordinal,KitchenQual,1,,Quality and condition
+ordinal,BsmtQual,1,,Quality and condition
+ordinal,BsmtCond,1,,Quality and condition
+ordinal,FireplaceQu,1,,Quality and condition
+ordinal,GarageQual,1,,Quality and condition
+ordinal,GarageCond,1,,Quality and condition
+ordinal,PoolQC,1,,Quality and condition
+ordinal,BsmtExposure,1,,Quality and condition
+ordinal,BsmtFinType1,1,,Quality and condition
+ordinal,BsmtFinType2,1,,Quality and condition
+ordinal,GarageFinish,1,,Quality and condition
+ordinal,LotShape,1,,Location and lot
+ordinal,LandSlope,1,,Location and lot
+ordinal,Functional,1,,Dwelling type and structure
+ordinal,PavedDrive,1,,Location and lot
+binary,CentralAir,1,,Dwelling type and structure
+nominal (one-hot),MSSubClass,15,"120, 160, 180, 190, 20, 30, 45, 50, 60, 70, 75, 80, 85, 90, infrequent_sklearn",Dwelling type and structure
+nominal (one-hot),MSZoning,5,"C (all), FV, RH, RL, RM",Location and lot
+nominal (one-hot),Alley,3,"Grvl, NoFeature, Pave",Location and lot
+nominal (one-hot),LotConfig,5,"Corner, CulDSac, FR2, Inside, infrequent_sklearn",Location and lot
+nominal (one-hot),LandContour,4,"Bnk, HLS, Low, Lvl",Location and lot
+nominal (one-hot),Neighborhood,24,"Blmngtn, BrDale, BrkSide, ClearCr, CollgCr, Crawfor, Edwards, Gilbert, IDOTRR, MeadowV, Mitchel, NAmes, NWAmes, NoRidge, NridgHt, OldTown, SWISU, Sawyer, SawyerW, Somerst, StoneBr, Timber, Veenker, infrequent_sklearn",Location and lot
+nominal (one-hot),Condition1,7,"Artery, Feedr, Norm, PosN, RRAe, RRAn, infrequent_sklearn",Location and lot
+nominal (one-hot),BldgType,5,"1Fam, 2fmCon, Duplex, Twnhs, TwnhsE",Dwelling type and structure
+nominal (one-hot),HouseStyle,8,"1.5Fin, 1.5Unf, 1Story, 2.5Unf, 2Story, SFoyer, SLvl, infrequent_sklearn",Dwelling type and structure
+nominal (one-hot),RoofStyle,5,"Flat, Gable, Gambrel, Hip, infrequent_sklearn",Dwelling type and structure
+nominal (one-hot),Exterior1st,11,"AsbShng, BrkFace, CemntBd, HdBoard, MetalSd, Plywood, Stucco, VinylSd, Wd Sdng, WdShing, infrequent_sklearn",Dwelling type and structure
+nominal (one-hot),Exterior2nd,12,"AsbShng, BrkFace, CmentBd, HdBoard, ImStucc, MetalSd, Plywood, Stucco, VinylSd, Wd Sdng, Wd Shng, infrequent_sklearn",Dwelling type and structure
+nominal (one-hot),MasVnrType,4,"BrkCmn, BrkFace, None, Stone",Dwelling type and structure
+nominal (one-hot),Foundation,5,"BrkTil, CBlock, PConc, Slab, infrequent_sklearn",Dwelling type and structure
+nominal (one-hot),Heating,3,"GasA, GasW, infrequent_sklearn",Dwelling type and structure
+nominal (one-hot),Electrical,4,"FuseA, FuseF, SBrkr, infrequent_sklearn",Dwelling type and structure
+nominal (one-hot),GarageType,6,"Attchd, Basment, BuiltIn, Detchd, NoFeature, infrequent_sklearn",Amenities
+nominal (one-hot),Fence,5,"GdPrv, GdWo, MnPrv, MnWw, NoFeature",Quality and condition
+nominal (one-hot),MiscFeature,3,"NoFeature, Shed, infrequent_sklearn",Amenities
+flags,IsRemodeled,1,,Engineered

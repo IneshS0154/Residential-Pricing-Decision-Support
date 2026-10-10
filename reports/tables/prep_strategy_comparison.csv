@@ -1,0 +1,5 @@
+,RMSE_mean,RMSE_sd,MAE_mean,MAE_sd,paired dRMSE vs baseline,SE of dRMSE
+baseline,0.13093,0.02122,15910.0,1902.0,0.0,0.0
+neighborhood,0.13101,0.02144,15919.0,1923.0,9e-05,0.0001
+neighborhood_indicator,0.13101,0.02138,15925.0,1909.0,8e-05,0.0001
+knn,0.13088,0.02115,15900.0,1893.0,-4e-05,5e-05

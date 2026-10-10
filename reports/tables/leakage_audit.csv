@@ -1,0 +1,80 @@
+column,known_at_listing,derived_from_price,note,group
+MSSubClass,Yes,No,,Dwelling type and structure
+MSZoning,Yes,No,,Location and lot
+LotFrontage,Yes,No,,Location and lot
+LotArea,Yes,No,,Location and lot
+Street,Yes,No,,Location and lot
+Alley,Yes,No,,Location and lot
+LotShape,Yes,No,,Location and lot
+LandContour,Yes,No,,Location and lot
+Utilities,Yes,No,,Location and lot
+LotConfig,Yes,No,,Location and lot
+LandSlope,Yes,No,,Location and lot
+Neighborhood,Yes,No,high-cardinality; target encoding must be fitted in-fold,Location and lot
+Condition1,Yes,No,,Location and lot
+Condition2,Yes,No,,Location and lot
+BldgType,Yes,No,,Dwelling type and structure
+HouseStyle,Yes,No,,Dwelling type and structure
+OverallQual,Yes,No,,Quality and condition
+OverallCond,Yes,No,,Quality and condition
+YearBuilt,Yes,No,,Age
+YearRemodAdd,Yes,No,1 row has remodel year after YrSold,Age
+RoofStyle,Yes,No,,Dwelling type and structure
+RoofMatl,Yes,No,,Dwelling type and structure
+Exterior1st,Yes,No,,Dwelling type and structure
+Exterior2nd,Yes,No,,Dwelling type and structure
+MasVnrType,Yes,No,,Dwelling type and structure
+MasVnrArea,Yes,No,,Dwelling type and structure
+ExterQual,Yes,No,,Quality and condition
+ExterCond,Yes,No,,Quality and condition
+Foundation,Yes,No,,Dwelling type and structure
+BsmtQual,Yes,No,,Quality and condition
+BsmtCond,Yes,No,,Quality and condition
+BsmtExposure,Yes,No,,Quality and condition
+BsmtFinType1,Yes,No,,Quality and condition
+BsmtFinSF1,Yes,No,,Size
+BsmtFinType2,Yes,No,,Quality and condition
+BsmtFinSF2,Yes,No,,Size
+BsmtUnfSF,Yes,No,,Size
+TotalBsmtSF,Yes,No,,Size
+Heating,Yes,No,,Dwelling type and structure
+HeatingQC,Yes,No,,Quality and condition
+CentralAir,Yes,No,,Dwelling type and structure
+Electrical,Yes,No,,Dwelling type and structure
+1stFlrSF,Yes,No,,Size
+2ndFlrSF,Yes,No,,Size
+LowQualFinSF,Yes,No,,Size
+GrLivArea,Yes,No,,Size
+BsmtFullBath,Yes,No,,Size
+BsmtHalfBath,Yes,No,,Size
+FullBath,Yes,No,,Size
+HalfBath,Yes,No,,Size
+BedroomAbvGr,Yes,No,,Size
+KitchenAbvGr,Yes,No,,Size
+KitchenQual,Yes,No,,Quality and condition
+TotRmsAbvGrd,Yes,No,,Size
+Functional,Yes,No,,Dwelling type and structure
+Fireplaces,Yes,No,,Amenities
+FireplaceQu,Yes,No,,Quality and condition
+GarageType,Yes,No,,Amenities
+GarageYrBlt,Yes,No,9 rows dated before YearBuilt; redundant with YearBuilt,Age
+GarageFinish,Yes,No,,Quality and condition
+GarageCars,Yes,No,,Size
+GarageArea,Yes,No,,Size
+GarageQual,Yes,No,,Quality and condition
+GarageCond,Yes,No,,Quality and condition
+PavedDrive,Yes,No,,Location and lot
+WoodDeckSF,Yes,No,,Amenities
+OpenPorchSF,Yes,No,,Amenities
+EnclosedPorch,Yes,No,,Amenities
+3SsnPorch,Yes,No,,Amenities
+ScreenPorch,Yes,No,,Amenities
+PoolArea,Yes,No,,Amenities
+PoolQC,Yes,No,,Quality and condition
+Fence,Yes,No,,Quality and condition
+MiscFeature,Yes,No,,Amenities
+MiscVal,Yes,No,dollar value of a misc feature; confirm it is not derived from the sale price,Amenities
+MoSold,No,No,sale-time; not known when a listing price is set,Sale context
+YrSold,No,No,sale-time; keep as temporal split key and age reference only,Sale context
+SaleType,No,No,"describes the transaction; 'New' is also a property fact, but it is only known at sale",Sale context
+SaleCondition,No,No,transaction fact; 'Partial' = home not complete when assessed,Sale context

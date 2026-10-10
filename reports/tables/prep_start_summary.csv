@@ -1,0 +1,12 @@
+,value
+Rows,1460
+"Columns in file (incl. Id, SalePrice)",81
+Predictors in X,79
+Numeric-dtype predictors (incl. MSSubClass code),36
+Categorical-dtype predictors,43
+Genuinely missing cells (NaN) in X,357
+'NA' cells meaning feature absent (14 columns),6608
+Duplicate rows (excluding Id),0
+Target missing values,0
+Target min / median / max ($),"34,900 / 163,000 / 755,000"
+Target skew raw -> log1p,1.88 -> 0.12

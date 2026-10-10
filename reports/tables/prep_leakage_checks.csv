@@ -1,0 +1,11 @@
+check,result,detail
+SalePrice and Id excluded from predictors,PASS,167 output columns
+Post-sale variables excluded,PASS,"SaleType, SaleCondition, MoSold, YrSold absent from output"
+Median imputation statistics come from the training fold,PASS,learned medians equal training-row medians for all 18 numeric columns; 4 differ from full-data medians (max gap 70.5)
+Neighborhood medians learned from the training fold only,PASS,"max difference from full-data medians: 4.5 ft (non-zero, so validation rows were not used)"
+KNN imputer fitted on training fold only,PASS,donor rows = 1168 = training rows 1168
+Encoder categories learned from the training fold only,PASS,25 neighbourhood categories in training fold
+Unseen category handled without error or leakage,PASS,2 Blueste rows transformed after removing the level from training
+Scaler fitted on the training fold only,PASS,RobustScaler centres training rows exactly (max |median| 0.0e+00); validation rows are not centred exactly (max |median| 0.13)
+Missing indicator preserves original missingness,PASS,indicator created before imputation; sum = 259
+Feature engineering uses no unavailable information,PASS,fixed reference year 2010; inputs are physical attributes only

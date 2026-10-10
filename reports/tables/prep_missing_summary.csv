@@ -1,0 +1,20 @@
+Feature,Missing Count,Missing Percentage,Data Type,Missingness Meaning,Class,Candidate Treatment,Reason
+PoolQC,1453,99.5,object,No pool,A,NoFeature (confirmed by PoolArea = 0),Explicit category; the most frequent value would give 99.5% of houses a pool
+MiscFeature,1406,96.3,object,No miscellaneous feature,A,NoFeature (confirmed by MiscVal = 0),"Absence is information, not noise"
+Alley,1369,93.8,object,No alley access,A,NoFeature (documented; no related column),data_description.txt defines NA as no alley access
+Fence,1179,80.8,object,No fence,A,NoFeature (documented; no related column),data_description.txt defines NA as no fence
+FireplaceQu,690,47.3,object,No fireplace,A,NoFeature (confirmed by Fireplaces = 0),Matches Fireplaces = 0 on all 690 rows
+LotFrontage,259,17.7,float64,Frontage exists but was not recorded,B,Median / neighbourhood median / KNN (compared),"Not missing at random: depends on lot shape, configuration and neighbourhood (EDA F07)"
+GarageFinish,81,5.5,object,No garage,A,NoFeature (GarageArea = GarageCars = 0),As above
+GarageYrBlt,81,5.5,float64,No garage (NaN on exactly the 81 no-garage houses),A,Not used as a predictor,"Redundant with YearBuilt (r = 0.83) and 9 rows are dated before the house (EDA F16, F19)"
+GarageType,81,5.5,object,No garage,A,NoFeature (GarageArea = GarageCars = 0),Matches zero garage size on all 81 rows
+GarageCond,81,5.5,object,No garage,A,NoFeature (GarageArea = GarageCars = 0),As above
+GarageQual,81,5.5,object,No garage,A,NoFeature (GarageArea = GarageCars = 0),As above
+BsmtFinType2,38,2.6,object,No basement (37 rows); 1 row has a basement,A + C,"NoFeature if TotalBsmtSF = 0, else most frequent among real basements","Id 333 has a 3,206 sq ft basement but no second finish type"
+BsmtExposure,38,2.6,object,No basement (37 rows); 1 row has a basement,A + C,"NoFeature if TotalBsmtSF = 0, else most frequent among real basements",Id 949 has a 936 sq ft basement but no exposure recorded
+BsmtFinType1,37,2.5,object,No basement,A,NoFeature (TotalBsmtSF = 0),As above
+BsmtCond,37,2.5,object,No basement,A,NoFeature (TotalBsmtSF = 0),As above
+BsmtQual,37,2.5,object,No basement,A,NoFeature (TotalBsmtSF = 0),Matches TotalBsmtSF = 0 on all 37 rows
+MasVnrType,8,0.5,object,"Veneer type unrecorded (""None"" is a real category, 864 rows)",B,Most frequent category,8 rows only; the same rows as MasVnrArea
+MasVnrArea,8,0.5,float64,Veneer area unrecorded,B,Median,Median is 0 (59% of houses have no veneer); the mean would invent a veneer
+Electrical,1,0.1,object,Electrical system unrecorded (Id 1380),B,Most frequent category,1 row; 91% of houses have SBrkr

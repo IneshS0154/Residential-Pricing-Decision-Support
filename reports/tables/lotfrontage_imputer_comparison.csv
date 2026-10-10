@@ -1,0 +1,5 @@
+imputer,RMSE (ft),MAE (ft)
+ratio to sqrt(LotArea) by Neighborhood,19.67,11.12
+median by Neighborhood,22.25,13.26
+median by Neighborhood+LotConfig,22.28,12.8
+global median,24.3,16.76

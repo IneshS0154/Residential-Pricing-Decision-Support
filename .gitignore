@@ -21,4 +21,7 @@ reports/figures/*
 !reports/figures/.gitkeep
 
 # Other
-CLAUDE.md
+artifacts/*
+!artifacts/.gitkeep
+data/interim/*
+!data/interim/.gitkeep
