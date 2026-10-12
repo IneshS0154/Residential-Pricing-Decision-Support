@@ -1,0 +1,16 @@
+,Gradient Boosting (tuned),ElasticNet (tuned),Lasso (fixed)
+Log-RMSE (all houses),0.12601974540467648,0.13066116873446512,0.12945089782489294
+MAE USD,15534.933570238203,16125.099463112816,16010.585935967729
+RMSE USD,26774.236457872194,32013.9607020527,31768.49181400681
+MAPE %,8.756227587010857,9.061695381441721,8.964526772960768
+R2 USD,0.8839766859345947,0.8217207788493667,0.8249266617682518
+CV stability: SD of fold Log-RMSE,0.012594268226773397,0.02088263934369259,0.020402876008903913
+Low segment: MAE USD / Log-RMSE,"10,280 / 0.150","9,914 / 0.145","9,803 / 0.142"
+Luxury segment: MAE USD / Log-RMSE,"42,402 / 0.189","49,077 / 0.237","48,944 / 0.236"
+Luxury segment: mean residual USD (+ = under),5044.8468052272665,16542.20715727622,16783.111651840805
+Log-RMSE without flagged houses,0.1209898430787545,0.11901935133598586,0.11796891316819931
+RMSE USD without flagged houses,24707.743492044152,24703.8573085344,24729.13169552124
+Outlier sensitivity: RMSE USD change when flagged houses are scored,2066.4929658280416,7310.1033935183,7039.3601184855725
+"Training cost per outer fold (s, tuning + refit)",297.74680330666695,35.76559760666653,0.5106662200001059
+Interpretability (qualitative judgement),low: 500 trees; needs post-hoc tools,high: 63 coefficients,high: sparse linear
+Downstream compatibility (qualitative judgement),quantile loss available; tree attributions,linear quantile models; exact attributions,as ElasticNet; not tuned

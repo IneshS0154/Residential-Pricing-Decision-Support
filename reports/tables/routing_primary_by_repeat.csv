@@ -1,0 +1,4 @@
+CV repeat,mean tau_k of its 5 folds,AUTO share,AUTO N,AUTO MAPE,AUTO coverage
+0,0.284,0.5274,770,6.5996,0.774
+1,0.244,0.3788,553,6.3584,0.7722
+2,0.26,0.4452,650,6.5218,0.8077
