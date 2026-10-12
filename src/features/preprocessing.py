@@ -97,6 +97,7 @@ FLAGS = ["IsRemodeled", "LotFrontage_Missing"]
 # Two unfinished (Partial) sales, 4,700 and 5,600 sq ft, that sold for $28-40 per sq ft vs $166-175 for comparable large homes (EDA F17).
 # Not removed by the pipeline; the modelling team may exclude them from TRAINING rows (decision D2).
 SUGGESTED_TRAINING_EXCLUSIONS = [524, 1299]
+YEAR_FEATURES = ("age", "raw")      # age: HouseAge/RemodAge (default); raw: YearBuilt/YearRemodAdd
 ENGINEERED = ["TotalSF", "TotalBathrooms", "HouseAge", "RemodAge", "IsRemodeled"]
 
 
@@ -309,13 +310,20 @@ class PropertyFeatureBuilder(BaseEstimator, TransformerMixin):
     HouseAge        = reference_year - YearBuilt        (reference year, not the unknown sale year)
     RemodAge        = reference_year - YearRemodAdd
     IsRemodeled     = YearRemodAdd != YearBuilt
-    MSSubClass is cast to string (nominal code). The two raw year columns are then dropped (exact linear
-    transforms of HouseAge / RemodAge)."""
+    MSSubClass is cast to string (nominal code). With year_features="age" (default) the two raw year columns are
+    then dropped (exact linear transforms of HouseAge / RemodAge); year_features="raw" keeps YearBuilt and
+    YearRemodAdd instead and creates no HouseAge / RemodAge.
+    garage_age=True additionally creates GarageAge = reference_year - GarageYrBlt (NaN for houses without a garage;
+    median-imputed downstream). GarageYrBlt itself is removed by the pruning step as before."""
 
-    def __init__(self, reference_year=REFERENCE_YEAR):
+    def __init__(self, reference_year=REFERENCE_YEAR, year_features="age", garage_age=False):
         self.reference_year = reference_year
+        self.year_features = year_features
+        self.garage_age = garage_age
 
     def fit(self, X, y=None):
+        if self.year_features not in YEAR_FEATURES:
+            raise ValueError(f"year_features must be one of {YEAR_FEATURES}")
         self.feature_names_in_ = np.asarray(X.columns, dtype=object)
         return self
 
@@ -323,15 +331,20 @@ class PropertyFeatureBuilder(BaseEstimator, TransformerMixin):
         X = X.copy()
         X["TotalSF"] = X["TotalBsmtSF"] + X["1stFlrSF"] + X["2ndFlrSF"]
         X["TotalBathrooms"] = X["FullBath"] + 0.5 * X["HalfBath"] + X["BsmtFullBath"] + 0.5 * X["BsmtHalfBath"]
-        X["HouseAge"] = (self.reference_year - X["YearBuilt"]).clip(lower=0)
-        X["RemodAge"] = (self.reference_year - X["YearRemodAdd"]).clip(lower=0)
         X["IsRemodeled"] = (X["YearRemodAdd"] != X["YearBuilt"]).astype(int)
+        if self.year_features == "age":
+            X["HouseAge"] = (self.reference_year - X["YearBuilt"]).clip(lower=0)
+            X["RemodAge"] = (self.reference_year - X["YearRemodAdd"]).clip(lower=0)
+        if self.garage_age:
+            X["GarageAge"] = (self.reference_year - X["GarageYrBlt"]).clip(lower=0)
         X["MSSubClass"] = X["MSSubClass"].astype(str)
-        return X.drop(columns=["YearBuilt", "YearRemodAdd"])
+        return X.drop(columns=["YearBuilt", "YearRemodAdd"]) if self.year_features == "age" else X
 
     def get_feature_names_out(self, input_features=None):
-        keep = [c for c in self.feature_names_in_ if c not in ("YearBuilt", "YearRemodAdd")]
-        return np.asarray(keep + ENGINEERED, dtype=object)
+        age = self.year_features == "age"
+        keep = [c for c in self.feature_names_in_ if not (age and c in ("YearBuilt", "YearRemodAdd"))]
+        new = ["TotalSF", "TotalBathrooms", "IsRemodeled"] + (["HouseAge", "RemodAge"] if age else [])
+        return np.asarray(keep + new + (["GarageAge"] if self.garage_age else []), dtype=object)
 
 
 class SkewLog1p(BaseEstimator, TransformerMixin):
@@ -369,7 +382,7 @@ NEIGHBORHOOD_ENCODINGS = ("onehot", "target", "both", "none")
 
 def build_preprocessor(strategy="baseline", scale="robust", drop_low_information=True,
                        knn_neighbors=5, min_frequency=10, skew_threshold=0.75, neighborhood_encoding="onehot",
-                       reduce_redundancy=True):
+                       reduce_redundancy=True, drop_columns=None, year_features="age", garage_age=False):
     """Return an UNFITTED preprocessing Pipeline (DataFrame in, DataFrame out).
 
     strategy: baseline | neighborhood | neighborhood_indicator | knn   (how LotFrontage is handled)
@@ -379,14 +392,22 @@ def build_preprocessor(strategy="baseline", scale="robust", drop_low_information
     neighborhood_encoding: 'onehot' (default) | 'target' | 'both' | 'none'.
         'target' uses sklearn's TargetEncoder (smoothed, cross-fitted inside fit, so the encoding of a
         training row never uses its own price). The pipeline then needs `y` (log1p price) at fit time.
+    drop_columns: explicit iterable of columns to prune (original or engineered names). When given it REPLACES the
+        drop_low_information / reduce_redundancy rules; used by src.features.feature_sets (full / domain_informed / ablations).
+    year_features: 'age' (default; HouseAge, RemodAge) | 'raw' (YearBuilt, YearRemodAdd).
+    garage_age: add GarageAge = reference year - GarageYrBlt (default False; GarageYrBlt is otherwise dropped).
     """
     if strategy not in STRATEGIES:
         raise ValueError(f"strategy must be one of {STRATEGIES}")
     if neighborhood_encoding not in NEIGHBORHOOD_ENCODINGS:
         raise ValueError(f"neighborhood_encoding must be one of {NEIGHBORHOOD_ENCODINGS}")
-    dropped = set(LOW_INFORMATION) if drop_low_information else set()
-    redundant = set(REDUNDANT) if reduce_redundancy else set()
-    dropped |= redundant
+    if year_features not in YEAR_FEATURES:
+        raise ValueError(f"year_features must be one of {YEAR_FEATURES}")
+    if drop_columns is not None:
+        dropped = set(drop_columns)
+    else:
+        dropped = set(LOW_INFORMATION) if drop_low_information else set()
+        dropped |= set(REDUNDANT) if reduce_redundancy else set()
     keep = lambda cols: [c for c in cols if c not in dropped]
 
     steps = [
@@ -401,14 +422,19 @@ def build_preprocessor(strategy="baseline", scale="robust", drop_low_information
         steps.append(("lotfrontage", NeighborhoodMedianImputer()))
     elif strategy == "knn":
         steps.append(("lotfrontage", KNNFrontageImputer(n_neighbors=knn_neighbors)))
-    steps.append(("features", PropertyFeatureBuilder()))
+    steps.append(("features", PropertyFeatureBuilder(year_features=year_features, garage_age=garage_age)))
     steps.append(("prune", ColumnDropper(ALWAYS_DROP_FEATURES + sorted(dropped))))
 
     ordinal = keep(list(ORDINAL_ORDERS))
     binary = keep(list(BINARY_ORDERS))
     nominal = [c for c in keep(NOMINAL) if not (c == "Neighborhood" and neighborhood_encoding in ("target", "none"))]
     te_cols = ["Neighborhood"] if neighborhood_encoding in ("target", "both") else []
-    numeric = keep(NUMERIC)
+    numeric_all = list(NUMERIC)
+    if year_features == "raw":
+        numeric_all = [c for c in numeric_all if c not in ("HouseAge", "RemodAge")] + ["YearBuilt", "YearRemodAdd"]
+    if garage_age:
+        numeric_all.append("GarageAge")
+    numeric = keep(numeric_all)
     ct = ColumnTransformer([
         ("numeric", Pipeline([("impute", SimpleImputer(strategy="median")),
                               ("skew", SkewLog1p(skew_threshold)),

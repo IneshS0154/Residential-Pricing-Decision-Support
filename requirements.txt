@@ -1,9 +1,24 @@
-pandas
-numpy
-scipy
-scikit-learn
-lightgbm
-xgboost
-matplotlib
-shap
-mapie
+# Tested environment: Python 3.14.2 on Windows 11 (the environment that produced the stored results and passed the unit-test suite).
+# Core stack: exact versions that were tested. The versions used for the earliest EDA runs were not recorded (see docs/reproducibility_notes.md).
+pandas==3.0.6
+numpy==2.5.3
+scipy==1.18.1
+scikit-learn==1.9.1
+joblib==1.6.0
+matplotlib==3.11.2
+optuna==5.0.0
+
+# Dashboard (app/dashboard.py)
+streamlit>=1.44
+plotly>=6.0
+
+# Running and re-executing the notebooks (jupyter nbconvert --execute); notebook 10 uses IPython.display.
+ipykernel>=7.4.0
+ipython>=9.17.1
+nbconvert>=7.17.1
+nbformat>=5.11.1
+nbclient>=0.11.0
+
+# Removed after verifying that no file in src/, tests/ or the notebooks imports them: lightgbm, xgboost, mapie (CQR is implemented directly
+# in src/evaluation/intervals.py) and an attribution library that this project does not use. Optional, only for src/data/make_reference_xlsx.py (not part of the pipeline):
+# openpyxl
