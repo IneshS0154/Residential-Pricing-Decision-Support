@@ -23,5 +23,8 @@ reports/figures/*
 # Other
 artifacts/*
 !artifacts/.gitkeep
+# exported dashboard model bundle (regenerate with: python3 -m src.serving.export_model)
+!artifacts/serving/
+!artifacts/serving/bundle_v1.joblib
 data/interim/*
 !data/interim/.gitkeep

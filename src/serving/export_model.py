@@ -85,7 +85,7 @@ def build_bundle(exclude_d2=True, version="v1"):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--keep-d2", action="store_true", help="keep Ids 524/1299 in training (default: exclude, user decision pending group approval)")
+    ap.add_argument("--keep-d2", action="store_true", help="keep Ids 524/1299 in training (default: exclude, per group decision D2)")
     ap.add_argument("--version", default="v1")
     a = ap.parse_args()
     b = build_bundle(exclude_d2=not a.keep_d2, version=a.version)
