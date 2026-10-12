@@ -25,3 +25,6 @@ artifacts/*
 !artifacts/.gitkeep
 data/interim/*
 !data/interim/.gitkeep
+
+# Claude Code project instructions (local only)
+CLAUDE.md
