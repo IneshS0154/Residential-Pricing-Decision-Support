@@ -1,3 +1,0 @@
-method,coverage (mean of 20 splits),min,max,"95% CI, one split (houses)",2009 houses,2010 houses,mean width USD,median relative width %
-Quantile GB,0.6268,0.5887,0.6608,0.585 to 0.668,0.6359,0.6091,44202.6317,19.3061
-CQR,0.767,0.729,0.8109,0.723 to 0.797,0.7701,0.7609,57070.0304,26.6128

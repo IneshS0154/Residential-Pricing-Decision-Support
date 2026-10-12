@@ -1,6 +1,0 @@
-scenario,tau_final,median of the 15 fold-wise tau_k
-P: AUTO MAPE <= 7% (conservative),0.22,0.26
-S6: AUTO MAPE <= 6% (conservative),-inf,0.18
-S8: AUTO MAPE <= 8% (conservative),0.42,0.44
-"S7pt: AUTO MAPE <= 7% (point estimate, non-conservative)",0.32,0.32
-S7cov: P and AUTO coverage >= 80%,-inf,0.3

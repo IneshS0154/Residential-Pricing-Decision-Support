@@ -1,7 +1,7 @@
 """Business attribute groups for every column of the Ames dataset.
 
 Single source of truth for the colour-coded reference sheet and, later, for
-grouping feature importance (grouped permutation importance, grouped ablation) in the price decomposition.
+grouping feature attributions in the price decomposition.
 """
 
 FEATURE_GROUPS = {

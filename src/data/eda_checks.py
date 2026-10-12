@@ -17,7 +17,7 @@ TARGET = "SalePrice"
 
 def feature_types(df):
     """numeric vs categorical predictors (MSSubClass is a nominal code)."""
-    cat = [c for c in df.columns if not pd.api.types.is_numeric_dtype(df[c])] + ["MSSubClass"]   # object or pandas>=3 string dtype
+    cat = [c for c in df.columns if df[c].dtype == object] + ["MSSubClass"]
     num = [c for c in df.columns if c not in cat + ["Id", TARGET]]
     return num, cat
 
@@ -72,7 +72,7 @@ def missingness_association(df, col, alpha=0.01):
 
 def _encode(X):
     X = X.copy()
-    cats = [c for c in X.columns if not pd.api.types.is_numeric_dtype(X[c])]   # object or pandas>=3 string dtype
+    cats = [c for c in X.columns if X[c].dtype == object]
     if cats:
         X[cats] = OrdinalEncoder(handle_unknown="use_encoded_value", unknown_value=-1).fit_transform(X[cats].fillna("NaN"))
     return X
