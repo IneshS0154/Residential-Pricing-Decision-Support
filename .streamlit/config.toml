@@ -1,0 +1,9 @@
+[theme]
+primaryColor = "#5b8def"
+font = "Poppins"
+
+[browser]
+gatherUsageStats = false
+
+[client]
+toolbarMode = "minimal"
