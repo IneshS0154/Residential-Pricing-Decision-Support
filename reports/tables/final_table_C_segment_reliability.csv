@@ -1,0 +1,35 @@
+Property Segment,Sample Size,Error Metric,Interval Coverage,Recommendation
+Price: low,371,"MAE $10,280; MAPE 10.6%; Log-RMSE 0.150; signed $972",80.9% (median width 36%),Standard use with the interval shown
+Price: mid,947,"MAE $13,563; MAPE 7.4%; Log-RMSE 0.103; signed $1,289",81.0% (median width 23%),Reliable relative to the portfolio
+Price: luxury,142,"MAE $42,402; MAPE 13.1%; Log-RMSE 0.189; signed $5,045",78.4% (median width 43%),REVIEW PRIORITY: higher error or weak coverage
+Quality: low (1-4),141,"MAE $12,275; MAPE 13.8%; Log-RMSE 0.184; signed $1,533",79.4% (median width 48%),REVIEW PRIORITY: higher error or weak coverage
+Quality: medium (5-8),1258,"MAE $14,165; MAPE 7.9%; Log-RMSE 0.110; signed $1,055",80.9% (median width 25%),Reliable relative to the portfolio
+Quality: high (9-10),61,"MAE $51,321; MAPE 14.7%; Log-RMSE 0.229; signed $12,493",79.2% (median width 50%),REVIEW PRIORITY: higher error or weak coverage
+Property age: <=10 yr,388,"MAE $20,353; MAPE 8.2%; Log-RMSE 0.127; signed $1,755",81.7% (median width 25%),Reliable relative to the portfolio
+Property age: 11-30 yr,224,"MAE $17,976; MAPE 7.1%; Log-RMSE 0.101; signed $3,680",83.3% (median width 23%),Reliable relative to the portfolio
+Property age: 31-60 yr,530,"MAE $11,561; MAPE 7.9%; Log-RMSE 0.114; signed $827",81.1% (median width 25%),Reliable relative to the portfolio
+Property age: >60 yr,318,"MAE $14,561; MAPE 12.0%; Log-RMSE 0.158; signed $1,139",77.0% (median width 38%),REVIEW PRIORITY: higher error or weak coverage
+"Living area: <=1,200 sq ft",435,"MAE $8,817; MAPE 8.4%; Log-RMSE 0.123; signed $272",83.7% (median width 25%),Reliable relative to the portfolio
+"Living area: 1,201-1,800",685,"MAE $13,631; MAPE 8.1%; Log-RMSE 0.115; signed $1,041",79.2% (median width 25%),Reliable relative to the portfolio
+"Living area: >1,800 sq ft",340,"MAE $27,966; MAPE 10.6%; Log-RMSE 0.150; signed $4,336",80.0% (median width 36%),Standard use with the interval shown
+Sale year: 2006,314,"MAE $14,645; MAPE 8.0%; Log-RMSE 0.111; signed $3,759",82.3% (median width 27%),Monitoring only (not a deployable grouping)
+Sale year: 2007,329,"MAE $17,858; MAPE 8.9%; Log-RMSE 0.134; signed $2,819",80.8% (median width 28%),Monitoring only (not a deployable grouping)
+Sale year: 2008,304,"MAE $14,419; MAPE 8.4%; Log-RMSE 0.123; signed $1,378",83.1% (median width 26%),Monitoring only (not a deployable grouping)
+Sale year: 2009,338,"MAE $15,531; MAPE 9.7%; Log-RMSE 0.139; signed -$1,256",78.4% (median width 28%),Monitoring only (not a deployable grouping)
+Sale year: 2010,175,"MAE $14,712; MAPE 8.7%; Log-RMSE 0.118; signed $1,164",77.9% (median width 26%),Monitoring only (not a deployable grouping)
+Neighbourhood: BrkSide,58,"MAE $12,789; MAPE 10.8%; Log-RMSE 0.142; signed $4,574",79.3% (median width 31%),Insufficient sample for a firm recommendation
+Neighbourhood: CollgCr,150,"MAE $12,561; MAPE 6.0%; Log-RMSE 0.075; signed -$906",86.7% (median width 21%),Reliable relative to the portfolio
+Neighbourhood: Crawfor,51,"MAE $23,767; MAPE 10.7%; Log-RMSE 0.135; signed $8,359",69.3% (median width 35%),REVIEW PRIORITY: higher error or weak coverage
+Neighbourhood: Edwards,100,"MAE $18,818; MAPE 14.0%; Log-RMSE 0.198; signed -$4,410",74.7% (median width 35%),REVIEW PRIORITY: higher error or weak coverage
+Neighbourhood: Gilbert,79,"MAE $9,759; MAPE 5.1%; Log-RMSE 0.070; signed -$504",84.4% (median width 18%),Insufficient sample for a firm recommendation
+Neighbourhood: IDOTRR,37,"MAE $12,712; MAPE 17.2%; Log-RMSE 0.226; signed $872",76.6% (median width 45%),REVIEW PRIORITY: higher error or weak coverage
+Neighbourhood: Mitchel,49,"MAE $12,225; MAPE 8.4%; Log-RMSE 0.116; signed -$1,079",85.0% (median width 24%),Insufficient sample for a firm recommendation
+Neighbourhood: NAmes,225,"MAE $10,771; MAPE 7.3%; Log-RMSE 0.105; signed -$855",84.0% (median width 24%),Reliable relative to the portfolio
+Neighbourhood: NWAmes,73,"MAE $14,085; MAPE 8.2%; Log-RMSE 0.126; signed -$2,231",84.0% (median width 25%),Insufficient sample for a firm recommendation
+Neighbourhood: NoRidge,41,"MAE $39,072; MAPE 9.6%; Log-RMSE 0.154; signed $20,858",77.2% (median width 34%),REVIEW PRIORITY: higher error or weak coverage
+Neighbourhood: NridgHt,77,"MAE $26,875; MAPE 8.1%; Log-RMSE 0.110; signed $8,658",81.4% (median width 37%),Insufficient sample for a firm recommendation
+Neighbourhood: OldTown,113,"MAE $13,429; MAPE 11.4%; Log-RMSE 0.153; signed -$974",79.7% (median width 38%),REVIEW PRIORITY: higher error or weak coverage
+Neighbourhood: Sawyer,74,"MAE $10,388; MAPE 8.6%; Log-RMSE 0.127; signed -$387",82.9% (median width 23%),Insufficient sample for a firm recommendation
+Neighbourhood: SawyerW,59,"MAE $11,803; MAPE 6.3%; Log-RMSE 0.080; signed -$1,183",84.8% (median width 22%),Insufficient sample for a firm recommendation
+Neighbourhood: Somerst,86,"MAE $18,184; MAPE 8.1%; Log-RMSE 0.115; signed $4,566",78.3% (median width 25%),Insufficient sample for a firm recommendation
+Neighbourhood: Timber,38,"MAE $20,653; MAPE 8.2%; Log-RMSE 0.112; signed -$257",81.6% (median width 29%),Insufficient sample for a firm recommendation

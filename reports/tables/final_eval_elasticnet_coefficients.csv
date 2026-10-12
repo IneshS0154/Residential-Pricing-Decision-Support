@@ -1,0 +1,173 @@
+feature,kind,coef_model_units,coef_per_sd,coef_original_units,approx_pct_effect,log1p_input,unit_note
+GrLivArea,numeric,0.19114,0.14073,0.42223,,True,per unit of log1p(x): ~ elasticity
+OverallQual,numeric,0.10822,0.07483,0.05411,5.56001,False,per original unit
+OverallCond,numeric,0.04036,0.04491,0.04036,4.11835,False,per original unit
+HouseAge,numeric,-0.06485,-0.04258,-0.00141,-0.14087,False,per original unit
+LotArea,numeric,0.03348,0.04037,0.07802,,True,per unit of log1p(x): ~ elasticity
+GarageCars,numeric,0.05124,0.03829,0.05124,5.25788,False,per original unit
+TotalBathrooms,numeric,0.01984,0.03116,0.03968,4.0474,False,per original unit
+Neighborhood_NridgHt,one-hot indicator,0.09606,0.02148,0.09606,10.08276,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+MSZoning_C (all),one-hot indicator,-0.25914,-0.02138,-0.25914,-22.82838,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+BsmtExposure,ordinal,0.01915,0.02043,0.01915,1.93342,False,per ordinal level
+Functional,ordinal,0.03051,0.02037,0.03051,3.09837,False,per ordinal level
+BsmtFinType1,ordinal,0.0469,0.01977,0.00938,0.94244,False,per ordinal level
+BsmtQual,ordinal,0.02172,0.01904,0.02172,2.1961,False,per ordinal level
+Condition1_Norm,one-hot indicator,0.05116,0.01759,0.05116,5.24863,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+KitchenQual,ordinal,0.02468,0.01638,0.02468,2.49893,False,per ordinal level
+Neighborhood_Crawfor,one-hot indicator,0.08515,0.01564,0.08515,8.88842,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+MSSubClass_20,one-hot indicator,0.03079,0.01484,0.03079,3.12643,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+HeatingQC,ordinal,0.02777,0.01332,0.01389,1.39841,False,per ordinal level
+Neighborhood_StoneBr,one-hot indicator,0.10154,0.01318,0.10154,10.68782,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+Neighborhood_Somerst,one-hot indicator,0.05102,0.01202,0.05102,5.23463,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+ScreenPorch,numeric,0.00824,0.01157,0.00824,,True,per unit of log1p(x): ~ elasticity
+FireplaceQu,ordinal,0.02487,0.01126,0.00622,0.62375,False,per ordinal level
+Neighborhood_NoRidge,one-hot indicator,0.06708,0.01109,0.06708,6.93853,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+Exterior1st_BrkFace,one-hot indicator,0.06055,0.01101,0.06055,6.24155,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+Neighborhood_Edwards,one-hot indicator,-0.04306,-0.01088,-0.04306,-4.21456,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+MSZoning_RM,one-hot indicator,-0.02997,-0.01068,-0.02997,-2.95217,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+HouseStyle_1Story,one-hot indicator,0.0184,0.00921,0.0184,1.85752,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+HouseStyle_2Story,one-hot indicator,-0.01908,-0.00879,-0.01908,-1.88981,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+Fireplaces,numeric,0.01342,0.00865,0.01342,1.35131,False,per original unit
+RemodAge,numeric,-0.01515,-0.00845,-0.00041,-0.04093,False,per original unit
+Neighborhood_BrkSide,one-hot indicator,0.0419,0.00819,0.0419,4.27929,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+CentralAir,binary,0.02788,0.00688,0.02788,2.82695,False,per original unit
+Foundation_PConc,one-hot indicator,0.0135,0.00671,0.0135,1.35928,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+ExterQual,ordinal,0.01146,0.00658,0.01146,1.15256,False,per ordinal level
+BldgType_1Fam,one-hot indicator,0.01773,0.00657,0.01773,1.78924,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+LotConfig_CulDSac,one-hot indicator,0.02217,0.00544,0.02217,2.2414,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+GarageFinish,ordinal,0.00572,0.0051,0.00572,0.57321,False,per ordinal level
+Foundation_BrkTil,one-hot indicator,-0.01634,-0.0049,-0.01634,-1.62113,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+LandContour_Bnk,one-hot indicator,-0.0225,-0.00457,-0.0225,-2.22454,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+RoofStyle_Hip,one-hot indicator,0.01117,0.00443,0.01117,1.12297,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+WoodDeckSF,numeric,0.00814,0.00412,0.00159,,True,per unit of log1p(x): ~ elasticity
+Neighborhood_OldTown,one-hot indicator,-0.01465,-0.00392,-0.01465,-1.45395,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+Exterior1st_MetalSd,one-hot indicator,0.01078,0.00386,0.01078,1.08363,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+GarageQual,ordinal,0.00521,0.00377,0.00521,0.52219,False,per ordinal level
+TotalBsmtSF,numeric,0.00159,0.00372,0.00325,,True,per unit of log1p(x): ~ elasticity
+BedroomAbvGr,numeric,-0.00449,-0.00366,-0.00449,-0.4479,False,per original unit
+PavedDrive,ordinal,0.00642,0.00319,0.00642,0.64437,False,per ordinal level
+Neighborhood_NWAmes,one-hot indicator,-0.01459,-0.00318,-0.01459,-1.44866,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+Neighborhood_Gilbert,one-hot indicator,-0.01392,-0.00315,-0.01392,-1.38226,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+Exterior1st_Wd Sdng,one-hot indicator,-0.0088,-0.00306,-0.0088,-0.87619,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+MSSubClass_160,one-hot indicator,-0.01279,-0.0026,-0.01279,-1.27112,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+Exterior1st_HdBoard,one-hot indicator,-0.00622,-0.00223,-0.00622,-0.61989,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+EnclosedPorch,numeric,0.0011,0.00189,0.0011,,True,per unit of log1p(x): ~ elasticity
+PoolQC,ordinal,-0.00562,-0.00151,-0.00562,-0.5603,False,per ordinal level
+LotConfig_FR2,one-hot indicator,-0.00742,-0.00131,-0.00742,-0.73908,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+Fence_GdWo,one-hot indicator,-0.00558,-0.00105,-0.00558,-0.55606,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+MasVnrType_Stone,one-hot indicator,0.00348,0.00098,0.00348,0.34871,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+OpenPorchSF,numeric,0.00153,0.00078,0.00036,,True,per unit of log1p(x): ~ elasticity
+LotShape,ordinal,0.00103,0.0006,0.00103,0.10323,False,per ordinal level
+Condition1_Artery,one-hot indicator,-0.00196,-0.00035,-0.00196,-0.1959,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+Neighborhood_ClearCr,one-hot indicator,0.00183,0.00025,0.00183,0.1834,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+IsRemodeled,flags,-0.00047,-0.00024,-0.00047,-0.04736,False,per original unit
+GarageType_infrequent_sklearn,one-hot indicator,-0.00202,-0.0002,-0.00202,-0.20143,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+MSSubClass_45,one-hot indicator,0.0,0.0,0.0,0.0,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+MSSubClass_120,one-hot indicator,0.0,0.0,0.0,0.0,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+MSSubClass_30,one-hot indicator,-0.0,-0.0,-0.0,-0.0,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+MSSubClass_190,one-hot indicator,-0.0,-0.0,-0.0,-0.0,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+MSSubClass_180,one-hot indicator,0.0,0.0,0.0,0.0,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+BsmtCond,ordinal,-0.0,-0.0,-0.0,-0.0,False,per ordinal level
+ExterCond,ordinal,-0.0,-0.0,-0.0,-0.0,False,per ordinal level
+MasVnrArea,numeric,0.0,0.0,0.0,,True,per unit of log1p(x): ~ elasticity
+KitchenAbvGr,numeric,-0.0,-0.0,-0.0,,True,per unit of log1p(x): ~ elasticity
+LotFrontage,numeric,0.0,0.0,0.0,,True,per unit of log1p(x): ~ elasticity
+LandSlope,ordinal,-0.0,-0.0,-0.0,-0.0,False,per ordinal level
+BsmtFinType2,ordinal,0.0,0.0,0.0,0.0,False,per ordinal level
+GarageCond,ordinal,0.0,0.0,0.0,0.0,False,per ordinal level
+Neighborhood_CollgCr,one-hot indicator,-0.0,-0.0,-0.0,-0.0,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+LandContour_Lvl,one-hot indicator,-0.0,-0.0,-0.0,-0.0,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+Neighborhood_Blmngtn,one-hot indicator,0.0,0.0,0.0,0.0,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+Neighborhood_BrDale,one-hot indicator,0.0,0.0,0.0,0.0,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+LotConfig_Inside,one-hot indicator,-0.0,-0.0,-0.0,-0.0,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+LotConfig_infrequent_sklearn,one-hot indicator,-0.0,-0.0,-0.0,-0.0,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+LandContour_HLS,one-hot indicator,0.0,0.0,0.0,0.0,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+LandContour_Low,one-hot indicator,0.0,0.0,0.0,0.0,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+LotConfig_Corner,one-hot indicator,0.0,0.0,0.0,0.0,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+MSSubClass_90,one-hot indicator,-0.0,-0.0,-0.0,-0.0,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+MSZoning_RH,one-hot indicator,0.0,0.0,0.0,0.0,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+Neighborhood_SWISU,one-hot indicator,0.0,0.0,0.0,0.0,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+Neighborhood_NAmes,one-hot indicator,-0.0,-0.0,-0.0,-0.0,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+Neighborhood_IDOTRR,one-hot indicator,-0.0,-0.0,-0.0,-0.0,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+Neighborhood_MeadowV,one-hot indicator,-0.0,-0.0,-0.0,-0.0,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+Neighborhood_Mitchel,one-hot indicator,-0.0,-0.0,-0.0,-0.0,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+Neighborhood_Veenker,one-hot indicator,0.0,0.0,0.0,0.0,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+Neighborhood_Timber,one-hot indicator,-0.0,-0.0,-0.0,-0.0,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+Neighborhood_Sawyer,one-hot indicator,-0.0,-0.0,-0.0,-0.0,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+Neighborhood_SawyerW,one-hot indicator,-0.0,-0.0,-0.0,-0.0,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+MSZoning_FV,one-hot indicator,0.0,0.0,0.0,0.0,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+Alley_NoFeature,one-hot indicator,-0.0,-0.0,-0.0,-0.0,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+Alley_Grvl,one-hot indicator,-0.0,-0.0,-0.0,-0.0,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+MSZoning_RL,one-hot indicator,0.0,0.0,0.0,0.0,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+Alley_Pave,one-hot indicator,0.0,0.0,0.0,0.0,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+MSSubClass_infrequent_sklearn,one-hot indicator,-0.0,-0.0,-0.0,-0.0,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+MSSubClass_50,one-hot indicator,-0.0,-0.0,-0.0,-0.0,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+MSSubClass_60,one-hot indicator,-0.0,-0.0,-0.0,-0.0,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+MSSubClass_80,one-hot indicator,-0.0,-0.0,-0.0,-0.0,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+MSSubClass_85,one-hot indicator,0.0,0.0,0.0,0.0,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+MSSubClass_70,one-hot indicator,0.0,0.0,0.0,0.0,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+MSSubClass_75,one-hot indicator,-0.0,-0.0,-0.0,-0.0,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+HouseStyle_1.5Unf,one-hot indicator,0.0,0.0,0.0,0.0,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+HouseStyle_1.5Fin,one-hot indicator,-0.0,-0.0,-0.0,-0.0,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+BldgType_TwnhsE,one-hot indicator,0.0,0.0,0.0,0.0,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+BldgType_Twnhs,one-hot indicator,-0.0,-0.0,-0.0,-0.0,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+BldgType_2fmCon,one-hot indicator,-0.0,-0.0,-0.0,-0.0,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+BldgType_Duplex,one-hot indicator,-0.0,-0.0,-0.0,-0.0,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+Condition1_RRAn,one-hot indicator,0.0,0.0,0.0,0.0,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+Condition1_infrequent_sklearn,one-hot indicator,0.0,0.0,0.0,0.0,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+Condition1_Feedr,one-hot indicator,-0.0,-0.0,-0.0,-0.0,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+Neighborhood_infrequent_sklearn,one-hot indicator,0.0,0.0,0.0,0.0,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+Condition1_RRAe,one-hot indicator,-0.0,-0.0,-0.0,-0.0,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+Condition1_PosN,one-hot indicator,0.0,0.0,0.0,0.0,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+RoofStyle_Gambrel,one-hot indicator,-0.0,-0.0,-0.0,-0.0,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+RoofStyle_Gable,one-hot indicator,-0.0,-0.0,-0.0,-0.0,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+HouseStyle_SFoyer,one-hot indicator,0.0,0.0,0.0,0.0,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+HouseStyle_2.5Unf,one-hot indicator,0.0,0.0,0.0,0.0,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+Exterior1st_Plywood,one-hot indicator,-0.0,-0.0,-0.0,-0.0,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+Exterior1st_Stucco,one-hot indicator,-0.0,-0.0,-0.0,-0.0,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+Exterior1st_VinylSd,one-hot indicator,0.0,0.0,0.0,0.0,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+Exterior1st_WdShing,one-hot indicator,0.0,0.0,0.0,0.0,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+Exterior1st_infrequent_sklearn,one-hot indicator,-0.0,-0.0,-0.0,-0.0,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+Exterior2nd_AsbShng,one-hot indicator,-0.0,-0.0,-0.0,-0.0,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+Exterior2nd_BrkFace,one-hot indicator,-0.0,-0.0,-0.0,-0.0,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+Exterior2nd_CmentBd,one-hot indicator,0.0,0.0,0.0,0.0,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+Exterior2nd_HdBoard,one-hot indicator,-0.0,-0.0,-0.0,-0.0,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+Exterior2nd_ImStucc,one-hot indicator,0.0,0.0,0.0,0.0,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+RoofStyle_Flat,one-hot indicator,-0.0,-0.0,-0.0,-0.0,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+HouseStyle_infrequent_sklearn,one-hot indicator,0.0,0.0,0.0,0.0,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+Exterior1st_AsbShng,one-hot indicator,-0.0,-0.0,-0.0,-0.0,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+RoofStyle_infrequent_sklearn,one-hot indicator,0.0,0.0,0.0,0.0,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+Exterior1st_CemntBd,one-hot indicator,0.0,0.0,0.0,0.0,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+HouseStyle_SLvl,one-hot indicator,-0.0,-0.0,-0.0,-0.0,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+Exterior2nd_Wd Shng,one-hot indicator,-0.0,-0.0,-0.0,-0.0,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+Exterior2nd_Wd Sdng,one-hot indicator,0.0,0.0,0.0,0.0,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+Exterior2nd_VinylSd,one-hot indicator,0.0,0.0,0.0,0.0,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+Exterior2nd_Stucco,one-hot indicator,-0.0,-0.0,-0.0,-0.0,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+Exterior2nd_Plywood,one-hot indicator,-0.0,-0.0,-0.0,-0.0,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+Exterior2nd_MetalSd,one-hot indicator,0.0,0.0,0.0,0.0,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+MasVnrType_None,one-hot indicator,-0.0,-0.0,-0.0,-0.0,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+Exterior2nd_infrequent_sklearn,one-hot indicator,-0.0,-0.0,-0.0,-0.0,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+Foundation_Slab,one-hot indicator,0.0,0.0,0.0,0.0,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+Foundation_infrequent_sklearn,one-hot indicator,0.0,0.0,0.0,0.0,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+Heating_GasA,one-hot indicator,-0.0,-0.0,-0.0,-0.0,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+Heating_GasW,one-hot indicator,0.0,0.0,0.0,0.0,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+Heating_infrequent_sklearn,one-hot indicator,-0.0,-0.0,-0.0,-0.0,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+MasVnrType_BrkFace,one-hot indicator,-0.0,-0.0,-0.0,-0.0,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+MasVnrType_BrkCmn,one-hot indicator,-0.0,-0.0,-0.0,-0.0,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+Foundation_CBlock,one-hot indicator,-0.0,-0.0,-0.0,-0.0,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+Electrical_SBrkr,one-hot indicator,-0.0,-0.0,-0.0,-0.0,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+Electrical_FuseF,one-hot indicator,0.0,0.0,0.0,0.0,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+Electrical_FuseA,one-hot indicator,0.0,0.0,0.0,0.0,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+Electrical_infrequent_sklearn,one-hot indicator,-0.0,-0.0,-0.0,-0.0,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+GarageType_BuiltIn,one-hot indicator,-0.0,-0.0,-0.0,-0.0,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+GarageType_Detchd,one-hot indicator,0.0,0.0,0.0,0.0,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+GarageType_Basment,one-hot indicator,-0.0,-0.0,-0.0,-0.0,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+GarageType_Attchd,one-hot indicator,0.0,0.0,0.0,0.0,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+Fence_GdPrv,one-hot indicator,0.0,0.0,0.0,0.0,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+GarageType_NoFeature,one-hot indicator,0.0,0.0,0.0,0.0,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+Fence_MnWw,one-hot indicator,-0.0,-0.0,-0.0,-0.0,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+Fence_MnPrv,one-hot indicator,0.0,0.0,0.0,0.0,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+Fence_NoFeature,one-hot indicator,0.0,0.0,0.0,0.0,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+MiscFeature_NoFeature,one-hot indicator,0.0,0.0,0.0,0.0,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+MiscFeature_Shed,one-hot indicator,-0.0,-0.0,-0.0,-0.0,False,"approx. multiplicative association: exp(coef)-1, no single reference level"
+MiscFeature_infrequent_sklearn,one-hot indicator,-0.0,-0.0,-0.0,-0.0,False,"approx. multiplicative association: exp(coef)-1, no single reference level"

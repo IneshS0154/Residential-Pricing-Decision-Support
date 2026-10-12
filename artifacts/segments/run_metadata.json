@@ -1,0 +1,18 @@
+{
+  "timestamp": "2026-10-10T19:48:33",
+  "runtime_seconds": 173.7,
+  "seed": 42,
+  "split": "train YrSold <= 2008 (n=947), test later (n=513)",
+  "feature_set": "reduced",
+  "tuning_budget": {
+    "elasticnet": 150,
+    "gbr": 50
+  },
+  "n_random_splits": 30,
+  "versions": {
+    "python": "3.14.2",
+    "sklearn": "1.9.1",
+    "numpy": "2.5.3",
+    "pandas": "3.0.6"
+  }
+}
