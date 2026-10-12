@@ -1,0 +1,117 @@
+{
+  "eval_id": "final_eval_v1",
+  "refit_seconds": 34.5,
+  "segment_edges_usd": [
+    130000,
+    280000
+  ],
+  "flagged_ids": [
+    524,
+    1299
+  ],
+  "primary_repeat": 0,
+  "seed": 42,
+  "models": {
+    "gbr_tuned": [
+      "Gradient Boosting (tuned, nested)",
+      "nested"
+    ],
+    "enet_tuned": [
+      "ElasticNet (tuned, nested)",
+      "nested"
+    ],
+    "lasso_fixed": [
+      "Lasso (fixed baseline, not tuned)",
+      "baseline"
+    ]
+  },
+  "permutation": {
+    "n_repeats": 5,
+    "groups": {
+      "Garage": [
+        "GarageCars",
+        "GarageArea",
+        "GarageType",
+        "GarageFinish",
+        "GarageQual",
+        "GarageCond",
+        "GarageYrBlt"
+      ],
+      "Living space": [
+        "GrLivArea",
+        "1stFlrSF",
+        "2ndFlrSF",
+        "TotRmsAbvGrd",
+        "LowQualFinSF",
+        "BedroomAbvGr",
+        "KitchenAbvGr"
+      ],
+      "Basement": [
+        "TotalBsmtSF",
+        "BsmtFinSF1",
+        "BsmtFinSF2",
+        "BsmtUnfSF",
+        "BsmtQual",
+        "BsmtCond",
+        "BsmtExposure",
+        "BsmtFinType1",
+        "BsmtFinType2"
+      ],
+      "Bathrooms": [
+        "FullBath",
+        "HalfBath",
+        "BsmtFullBath",
+        "BsmtHalfBath"
+      ],
+      "Property age": [
+        "YearBuilt",
+        "YearRemodAdd"
+      ],
+      "Quality and condition": [
+        "OverallQual",
+        "OverallCond",
+        "ExterQual",
+        "ExterCond",
+        "KitchenQual",
+        "HeatingQC"
+      ],
+      "Location and lot": [
+        "Neighborhood",
+        "MSZoning",
+        "Condition1",
+        "LotArea",
+        "LotFrontage",
+        "LotShape",
+        "LotConfig",
+        "LandContour",
+        "LandSlope"
+      ],
+      "Dwelling type and exterior": [
+        "MSSubClass",
+        "BldgType",
+        "HouseStyle",
+        "RoofStyle",
+        "Foundation",
+        "Exterior1st",
+        "Exterior2nd",
+        "MasVnrType",
+        "MasVnrArea"
+      ],
+      "Amenities and other": [
+        "Fireplaces",
+        "FireplaceQu",
+        "WoodDeckSF",
+        "OpenPorchSF",
+        "EnclosedPorch",
+        "ScreenPorch",
+        "Fence",
+        "CentralAir",
+        "Electrical",
+        "Functional",
+        "PavedDrive",
+        "Heating",
+        "Alley"
+      ]
+    }
+  }
+}

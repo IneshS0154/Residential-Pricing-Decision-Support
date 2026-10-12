@@ -1,0 +1,90 @@
+Document,Quoted claim,Quoted value,Value in source,Source,Result
+baseline_comparison.md,ElasticNet Log-RMSE,0.1289,0.128884,reports/tables/baseline_comparison.csv,MATCH
+baseline_comparison.md,Lasso Log-RMSE,0.1295,0.129451,reports/tables/baseline_comparison.csv,MATCH
+baseline_comparison.md,Gradient Boosting Log-RMSE,0.1311,0.131126,reports/tables/baseline_comparison.csv,MATCH
+baseline_comparison.md,Ridge Log-RMSE,0.1322,0.132154,reports/tables/baseline_comparison.csv,MATCH
+baseline_comparison.md,OLS Log-RMSE,0.1341,0.134093,reports/tables/baseline_comparison.csv,MATCH
+baseline_comparison.md,Random Forest Log-RMSE,0.1423,0.14235,reports/tables/baseline_comparison.csv,MATCH
+baseline_comparison.md,Dummy (mean) Log-RMSE,0.3992,0.399214,reports/tables/baseline_comparison.csv,MATCH
+baseline_comparison.md,"Gradient Boosting USD RMSE ~28,248",28248.0,28248.120697,reports/tables/baseline_comparison.csv,MATCH
+tuning.md,tuned GBR Log-RMSE 0.1260,0.126,0.12602,reports/tables/tuning_vs_baseline.csv,MATCH
+tuning.md,"tuned GBR MAE 15,535",15535.0,15534.93357,reports/tables/tuning_vs_baseline.csv,MATCH
+tuning.md,"tuned GBR RMSE 26,774",26774.0,26774.236458,reports/tables/tuning_vs_baseline.csv,MATCH
+tuning.md,tuned GBR MAPE 8.76,8.76,8.756228,reports/tables/tuning_vs_baseline.csv,MATCH
+tuning.md,tuned GBR R2 0.884,0.884,0.883977,reports/tables/tuning_vs_baseline.csv,MATCH
+tuning.md,tuned ElasticNet Log-RMSE 0.1307,0.1307,0.130661,reports/tables/tuning_vs_baseline.csv,MATCH
+tuning.md,GBR tuned - baseline = -0.0051,-0.0051,-0.005106,reports/tables/tuning_vs_baseline.csv,MATCH
+tuning.md,ElasticNet tuned - baseline = +0.0018,0.0018,0.001778,reports/tables/tuning_vs_baseline.csv,MATCH
+tuning.md,final GBR learning_rate 0.0242,0.0242,0.024156,artifacts/tuning/final_params_tuning_v1.json,MATCH
+tuning.md,final GBR subsample 0.655,0.655,0.654877,artifacts/tuning/final_params_tuning_v1.json,MATCH
+tuning.md,final GBR inner score 0.1271,0.1271,0.127093,artifacts/tuning/final_params_tuning_v1.json,MATCH
+final_evaluation.md,GBR Log-RMSE 0.1260,0.126,0.126,reports/tables/final_eval_accuracy.csv,MATCH
+final_evaluation.md,ElasticNet Log-RMSE 0.1307,0.1307,0.1307,reports/tables/final_eval_accuracy.csv,MATCH
+final_evaluation.md,Lasso Log-RMSE 0.1295,0.1295,0.1295,reports/tables/final_eval_accuracy.csv,MATCH
+final_evaluation.md,GBR fold SD 0.0126,0.0126,0.0126,reports/tables/final_eval_accuracy.csv,MATCH
+prediction_intervals.md,quantile GB coverage 65.1%,65.1,65.114155,reports/tables/intervals_main_comparison.csv,MATCH
+prediction_intervals.md,CQR coverage 80.7%,80.7,80.707763,reports/tables/intervals_main_comparison.csv,MATCH
+prediction_intervals.md,quantile GB mean width $43.2k,43.2,43.161245,reports/tables/intervals_main_comparison.csv,MATCH
+prediction_intervals.md,CQR mean width $56.7k,56.7,56.702484,reports/tables/intervals_main_comparison.csv,MATCH
+prediction_intervals.md,CQR median relative width 27.0%,27.0,27.00755,reports/tables/intervals_main_comparison.csv,MATCH
+prediction_intervals.md,temporal CQR 76.7%,76.7,76.7,reports/tables/intervals_temporal.csv,MATCH
+prediction_intervals.md,temporal raw 62.7%,62.7,62.68,reports/tables/intervals_temporal.csv,MATCH
+routing.md,AUTO share 45.0%,45.0,45.0457,reports/tables/routing_heldout_policy.csv,MATCH
+routing.md,AUTO MAE $10.8k,10.8,10.820802,reports/tables/routing_heldout_policy.csv,MATCH
+routing.md,AUTO MAPE 6.49%,6.49,6.4933,reports/tables/routing_heldout_policy.csv,MATCH
+routing.md,AUTO coverage 78.5%,78.5,78.46,reports/tables/routing_heldout_policy.csv,MATCH
+routing.md,ESCALATE share 55.0%,55.0,54.9543,reports/tables/routing_heldout_policy.csv,MATCH
+routing.md,ESCALATE MAE $19.4k,19.4,19.432628,reports/tables/routing_heldout_policy.csv,MATCH
+routing.md,ESCALATE MAPE 10.66%,10.66,10.6605,reports/tables/routing_heldout_policy.csv,MATCH
+routing.md,overall MAPE 8.76%,8.76,8.7562,reports/tables/routing_heldout_policy.csv,MATCH
+routing.md,temporal tau 0.32,0.32,0.32,reports/tables/routing_temporal.csv,MATCH
+routing.md,temporal AUTO 64.5%,64.5,64.5224,reports/tables/routing_temporal.csv,MATCH
+routing.md,temporal AUTO MAPE 8.16%,8.16,8.1558,reports/tables/routing_temporal.csv,MATCH
+routing.md,temporal AUTO coverage 75.5%,75.5,75.53,reports/tables/routing_temporal.csv,MATCH
+segment_temporal.md,temporal Gradient Boosting Log-RMSE (historical-only tuned) 0.1317,0.1317,0.1317,reports/tables/segments_temporal_comparison.csv,MATCH
+segment_temporal.md,temporal ElasticNet Log-RMSE (historical-only tuned) 0.1316,0.1316,0.1316,reports/tables/segments_temporal_comparison.csv,MATCH
+feature_set_decision.md,A Ridge (alpha 1) Log-RMSE,0.1321,0.13215,reports/tables/feature_set_decision.csv,MATCH
+feature_set_decision.md,B Ridge (alpha 1) Log-RMSE,0.1369,0.13687,reports/tables/feature_set_decision.csv,MATCH
+feature_set_decision.md,A Gradient Boosting (defaults) Log-RMSE,0.1311,0.13113,reports/tables/feature_set_decision.csv,MATCH
+feature_set_decision.md,B Gradient Boosting (defaults) Log-RMSE,0.1293,0.12932,reports/tables/feature_set_decision.csv,MATCH
+feature_set_decision.md,A Random Forest Log-RMSE,0.1424,0.14235,reports/tables/feature_set_decision.csv,MATCH
+feature_set_decision.md,B Random Forest Log-RMSE,0.1411,0.1411,reports/tables/feature_set_decision.csv,MATCH
+eda_insight_log.md (D2),Ridge gain 0.00416,0.00416,0.004165,reports/tables/decision_d2_outliers.csv,MATCH
+eda_insight_log.md (D2),Ridge gain/SE 4.2,4.2,4.152288,reports/tables/decision_d2_outliers.csv,MATCH
+eda_insight_log.md (D2),GBM gain 0.00147,0.00147,0.001466,reports/tables/decision_d2_outliers.csv,MATCH
+eda_insight_log.md (D2),GBM gain/SE 2.5,2.5,2.523149,reports/tables/decision_d2_outliers.csv,MATCH
+eda_insight_log.md (D2),placebo mean +0.00001,1e-05,1.3e-05,reports/tables/decision_d2_placebo.csv,MATCH
+eda_insight_log.md (D2),placebo max 0.00016,0.00016,0.000162,reports/tables/decision_d2_placebo.csv,MATCH
+eda_insight_log.md (D3),Ridge onehot 0.1309,0.1309,0.130929,reports/tables/decision_d3_neighborhood_encoding.csv,MATCH
+eda_insight_log.md (D3),Ridge target 0.1338,0.1338,0.133753,reports/tables/decision_d3_neighborhood_encoding.csv,MATCH
+eda_insight_log.md (D3),GBM onehot 0.1290,0.129,0.129005,reports/tables/decision_d3_neighborhood_encoding.csv,MATCH
+eda_insight_log.md (D3),GBM target 0.1269,0.1269,0.126907,reports/tables/decision_d3_neighborhood_encoding.csv,MATCH
+eda_insight_log.md (D3),GBM both 0.1258,0.1258,0.1258,reports/tables/decision_d3_neighborhood_encoding.csv,MATCH
+eda_insight_log.md (D3),Ridge no-Neighborhood cost 0.0063,0.0063,0.006298,reports/tables/decision_d3_neighborhood_encoding.csv,MATCH
+eda_insight_log.md (D3),GBM no-Neighborhood cost 0.0019,0.0019,0.001948,reports/tables/decision_d3_neighborhood_encoding.csv,MATCH
+preprocessing_log.md,strategy baseline RMSE,0.1309,0.13093,reports/tables/prep_strategy_comparison.csv,MATCH
+preprocessing_log.md,strategy neighborhood RMSE,0.131,0.13101,reports/tables/prep_strategy_comparison.csv,MATCH
+preprocessing_log.md,strategy neighborhood_indicator RMSE,0.131,0.13101,reports/tables/prep_strategy_comparison.csv,MATCH
+preprocessing_log.md,strategy knn RMSE,0.1309,0.13088,reports/tables/prep_strategy_comparison.csv,MATCH
+eda_insight_log.md (F22),"CV Log-RMSE, all predictors 0.1311",0.1311,0.1311,reports/tables/ablation_sale_context.csv (earlier-environment values; see docs/reproducibility_notes.md),MATCH
+eda_insight_log.md (F22),drop all four sale-context columns 0.1319,0.1319,0.1319,reports/tables/ablation_sale_context.csv (earlier-environment values; see docs/reproducibility_notes.md),MATCH
+eda_insight_log.md (F22),cost of dropping them +0.0008,0.0008,0.0008,reports/tables/ablation_sale_context.csv (earlier-environment values; see docs/reproducibility_notes.md),MATCH
+worked_examples.md,Id 129 predicted price,147169.0,147169.095728,reports/tables/worked_examples.csv,MATCH
+worked_examples.md,Id 129 relative width,0.208,0.208363,reports/tables/worked_examples.csv,MATCH
+worked_examples.md,Id 129 retrospective error,7831.0,7830.904272,reports/tables/worked_examples.csv,MATCH
+worked_examples.md,Id 42 predicted price,158087.0,158086.999636,reports/tables/worked_examples.csv,MATCH
+worked_examples.md,Id 42 relative width,0.2999,0.299886,reports/tables/worked_examples.csv,MATCH
+worked_examples.md,Id 42 retrospective error,11913.0,11913.000364,reports/tables/worked_examples.csv,MATCH
+worked_examples.md,Id 785 predicted price,136283.0,136283.333008,reports/tables/worked_examples.csv,MATCH
+worked_examples.md,Id 785 relative width,0.311,0.311372,reports/tables/worked_examples.csv,MATCH
+worked_examples.md,Id 785 retrospective error,-8283.0,-8283.333008,reports/tables/worked_examples.csv,MATCH
+worked_examples.md,Id 750 predicted price,83447.0,83446.568119,reports/tables/worked_examples.csv,MATCH
+worked_examples.md,Id 750 relative width,0.842,0.841642,reports/tables/worked_examples.csv,MATCH
+worked_examples.md,Id 750 retrospective error,14553.0,14553.431881,reports/tables/worked_examples.csv,MATCH
+worked_examples.md,Id 129 total decomposition change (USD),-33126.0,-33126.431415,reports/tables/worked_examples_decomposition.csv,MATCH
+worked_examples.md,Id 42 total decomposition change (USD),-2411.0,-2411.007798,reports/tables/worked_examples_decomposition.csv,MATCH
+worked_examples.md,Id 785 total decomposition change (USD),-42915.0,-42914.798306,reports/tables/worked_examples_decomposition.csv,MATCH
+worked_examples.md,Id 750 total decomposition change (USD),-83809.0,-83808.883008,reports/tables/worked_examples_decomposition.csv,MATCH
+worked_examples.md,GBR vs ElasticNet OOF Pearson 0.983,0.983,0.982817,artifacts/final_evaluation/oof_predictions.csv.gz,MATCH
+worked_examples.md,GBR vs ElasticNet OOF RMSE of log difference 0.071,0.071,0.07055,artifacts/final_evaluation/oof_predictions.csv.gz,MATCH
+worked_examples.md,median absolute price difference 3.9 %,3.9,3.909786,artifacts/final_evaluation/oof_predictions.csv.gz,MATCH
