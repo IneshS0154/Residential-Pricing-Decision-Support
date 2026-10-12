@@ -1,0 +1,249 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --text: #1f2430; --bg: #ffffff; --primary: #5b8def;
+  --green: #2e9d6a; --red: #d4604d; --amber: #e0a030; --total: #3b5bdb;
+  --line: color-mix(in srgb, var(--text) 18%, transparent);
+  --soft: color-mix(in srgb, var(--text) 8%, transparent);
+  --muted: color-mix(in srgb, var(--text) 62%, transparent);
+  --ease: cubic-bezier(.22,.8,.3,1);
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: transparent; color: var(--text); font-family: "Poppins", system-ui, sans-serif; font-size: 13px; overflow: hidden; }
+#root { display: grid; grid-template-rows: auto minmax(0, 1fr); gap: 12px; height: 100vh; }
+.card { border: 1px solid var(--line); border-radius: 14px; padding: 14px 18px; min-height: 0; }
+.kicker { text-transform: uppercase; letter-spacing: .08em; font-size: 10px; color: var(--muted); margin-bottom: 2px; }
+h3 { margin: 0 0 8px 0; font-size: 14px; font-weight: 600; }
+.small { font-size: 11.5px; color: var(--muted); line-height: 1.45; }
+
+/* top card: price | interval | recommendation */
+.hero { display: grid; grid-template-columns: minmax(210px, auto) minmax(0, 1fr) minmax(150px, 200px); gap: 26px; align-items: center; }
+.price { font-size: clamp(34px, 3.4vw, 50px); font-weight: 700; line-height: 1.05; letter-spacing: -.02em; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.range { font-size: 13px; margin-top: 6px; color: color-mix(in srgb, var(--text) 85%, transparent); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.pill { display: inline-flex; align-items: center; gap: 6px; padding: 4px 13px; border-radius: 999px; font-weight: 600; font-size: 13px; letter-spacing: .04em;
+        border: 1px solid; transition: background-color .5s var(--ease), color .5s var(--ease), border-color .5s var(--ease); margin: 3px 0 6px 0; }
+.pill svg { width: 14px; height: 14px; fill: currentColor; }
+.pill.auto { background: color-mix(in srgb, var(--green) 18%, transparent); color: var(--green); border-color: color-mix(in srgb, var(--green) 50%, transparent); }
+.pill.esc  { background: color-mix(in srgb, var(--amber) 18%, transparent); color: var(--amber); border-color: color-mix(in srgb, var(--amber) 55%, transparent); }
+.pill .ico-esc { display: none; } .pill.esc .ico-esc { display: block; } .pill.esc .ico-ok { display: none; }
+
+/* interval */
+.iv { position: relative; height: 96px; margin: 0 8px; }
+.iv .band { position: absolute; top: 36px; height: 22px; border-radius: 11px; background: color-mix(in srgb, var(--primary) 35%, transparent); }
+.iv .tick { position: absolute; top: 29px; width: 3px; height: 36px; margin-left: -1.5px; border-radius: 2px; background: var(--primary); }
+.iv .dot { position: absolute; top: 34px; width: 26px; height: 26px; margin-left: -13px; border-radius: 50%; background: var(--total);
+           border: 3px solid var(--bg); box-shadow: 0 1px 6px rgba(0,0,0,.35); }
+.iv .lab { position: absolute; transform: translateX(-50%); text-align: center; font-size: 11.5px; line-height: 1.25; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.iv .lab b { display: block; font-weight: 600; font-size: 12.5px; }
+.iv .lab span { color: var(--muted); font-size: 10.5px; }
+.iv .lab.up { top: 0; } .iv .lab.dn { top: 68px; }
+
+/* lower row */
+.lower { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: 12px; min-height: 0; }
+.wf { display: flex; flex-direction: column; }
+.wf #rows { flex: 1 1 auto; display: flex; flex-direction: column; min-height: 0; }
+.wf .row { flex: 1 1 0; max-height: 54px; min-height: 22px; display: grid; grid-template-columns: 150px 1fr 74px; align-items: center; font-size: 12px; }
+.wf .name { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; padding-right: 8px; }
+.wf .name.strong { font-weight: 600; }
+.wf .plot { position: relative; height: 100%; }
+.wf .plot::before { content: ""; position: absolute; left: 0; right: 0; top: 50%; border-top: 1px dotted var(--line); }
+.wf .b { position: absolute; top: 18%; height: 64%; border-radius: 4px; min-width: 2px; }
+.wf .val { text-align: right; font-variant-numeric: tabular-nums; font-weight: 500; }
+.wf .note { margin-top: 6px; }
+
+.side { display: flex; flex-direction: column; gap: 4px; }
+.gauge { position: relative; height: 66px; margin: 4px 4px 0 4px; flex: none; }
+.gauge .back { position: absolute; top: 24px; height: 20px; left: 0; right: 0; border-radius: 6px; background: var(--soft); }
+.gauge .zone { position: absolute; top: 24px; height: 20px; left: 0; border-radius: 6px 0 0 6px; background: color-mix(in srgb, var(--green) 22%, transparent); }
+.gauge .bar { position: absolute; top: 28px; height: 12px; left: 0; border-radius: 3px; background: var(--green); transition: background-color .5s var(--ease); }
+.gauge .bar.esc { background: var(--amber); }
+.gauge .tau { position: absolute; top: 16px; height: 36px; border-left: 2px dotted var(--muted); }
+.gauge .tl { position: absolute; top: 0; transform: translateX(-50%); font-size: 11px; color: var(--muted); white-space: nowrap; }
+.gauge .vl { position: absolute; top: 48px; transform: translateX(-50%); font-size: 12px; font-weight: 600; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.ev { margin-top: 8px; border-top: 1px solid var(--line); padding-top: 8px; }
+.ev .t { font-size: 10px; text-transform: uppercase; letter-spacing: .07em; color: var(--muted); margin-bottom: 4px; }
+.ev .r { display: flex; justify-content: space-between; font-size: 12px; padding: 3px 0; }
+.ev .r b { font-variant-numeric: tabular-nums; font-weight: 600; }
+.tiles { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 10px; margin-top: auto; }
+.tile { border: 1px solid var(--line); border-radius: 10px; padding: 8px 12px; }
+.tile .k { font-size: 10px; text-transform: uppercase; letter-spacing: .07em; color: var(--muted); }
+.tile .v { font-size: 18px; font-weight: 600; font-variant-numeric: tabular-nums; margin-top: 2px; white-space: nowrap; }
+.tile .k { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.tile .v.pos { color: var(--green); } .tile .v.neg { color: var(--red); }
+
+/* compact layout for narrower windows: interval bar moves to its own row; secondary text is hidden to keep everything on one screen */
+@media (max-width: 760px) {
+  .hero { grid-template-columns: minmax(0, 1fr) auto; row-gap: 4px; padding: 12px 16px; }
+  .hero > div:nth-child(2) { grid-column: 1 / -1; grid-row: 2; }
+  .hero > div:nth-child(3) { grid-column: 2; grid-row: 1; }
+  .hero .small.cap { display: none; }
+  .price { font-size: 34px; }
+  .wf .row { grid-template-columns: 118px 1fr 66px; }
+  .wf .note, .ev, #gnote { display: none; }
+  .card { padding: 12px 14px; }
+  .tile { padding: 6px 9px; } .tile .v { font-size: 15px; }
+}
+</style>
+</head>
+<body>
+<div id="root">
+  <section class="card hero">
+    <div>
+      <div class="kicker">Estimated sale price</div>
+      <div class="price" id="price">$0</div>
+      <div class="range" id="range"></div>
+    </div>
+    <div>
+      <div class="iv" id="iv">
+        <div class="band" id="band"></div><div class="tick" id="tl"></div><div class="tick" id="tu"></div><div class="dot" id="dot"></div>
+        <div class="lab up" id="ll"><b></b><span>lower</span></div>
+        <div class="lab up" id="lu"><b></b><span>upper</span></div>
+        <div class="lab dn" id="lp"><b></b><span>estimate</span></div>
+      </div>
+      <div class="small cap" style="text-align:center">Bar: 80% price range &middot; dot: point estimate (median)</div>
+    </div>
+    <div>
+      <div class="kicker">Recommendation</div>
+      <span class="pill auto" id="pill">
+        <svg class="ico-ok" viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm-2 15l-5-5 1.4-1.4L10 14.2l7.6-7.6L19 8l-9 9z"/></svg>
+        <svg class="ico-esc" viewBox="0 0 24 24"><path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/></svg>
+        <span id="pilltxt">AUTO</span></span>
+      <div class="small" id="recnote"></div>
+    </div>
+  </section>
+
+  <div class="lower">
+    <section class="card wf">
+      <h3>How the price builds up, by attribute group</h3>
+      <div id="rows"></div>
+      <div class="small note" id="wnote"></div>
+    </section>
+
+    <section class="card side">
+      <h3>How confident is the model?</h3>
+      <div class="gauge" id="gauge">
+        <div class="back"></div><div class="zone" id="gzone"></div><div class="bar" id="gbar"></div>
+        <div class="tau" id="gtau"></div><div class="tl" id="gtl"></div><div class="vl" id="gvl"></div>
+      </div>
+      <div class="small" id="gnote"></div>
+      <div class="ev"><div class="t">Track record on unseen houses</div><div id="ev"></div></div>
+      <div class="tiles">
+        <div class="tile"><div class="k" title="Contribution vs a typical house. Not a land value.">Location & lot</div><div class="v" id="tland"></div></div>
+        <div class="tile"><div class="k" title="Contribution vs a typical house.">Building & use</div><div class="v" id="tbuild"></div></div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<script>
+const $ = id => document.getElementById(id);
+const usd = v => "$" + Math.round(Math.abs(v)).toLocaleString("en-US");
+const sgn = v => (v >= 0 ? "+" : "−") + usd(v);
+const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
+const ease = t => 1 - Math.pow(1 - t, 3);
+
+let cur = null, target = null, from = null, t0 = 0, raf = null, names = [], DUR = 750, built = false;
+
+function send(type, extra) { window.parent.postMessage(Object.assign({ isStreamlitMessage: true, type }, extra), "*"); }
+function setHeight() {
+  // fill the visible window below the iframe's top edge (same origin as the Streamlit page), never smaller than a usable minimum
+  let h = 640;
+  try { const f = window.frameElement, pw = window.parent; h = Math.max(500, Math.floor(pw.innerHeight - f.getBoundingClientRect().top - 14)); } catch (e) {}
+  send("streamlit:setFrameHeight", { height: h });
+}
+try { window.parent.addEventListener("resize", () => setHeight()); } catch (e) {}
+
+function applyTheme(th) {
+  if (!th) return;
+  const r = document.documentElement.style, dark = th.base === "dark";
+  r.setProperty("--text", th.textColor || (dark ? "#fafafa" : "#1f2430"));
+  r.setProperty("--bg", th.backgroundColor || (dark ? "#0e1117" : "#ffffff"));
+  r.setProperty("--primary", th.primaryColor || "#5b8def");
+  r.setProperty("--total", dark ? "#6f8fff" : "#3b5bdb");
+}
+
+function buildRows(groups) {
+  names = groups.map(g => g.name);
+  const rows = ["Typical house"].concat(names).concat(["Model estimate"]);
+  $("rows").innerHTML = rows.map((n, i) => {
+    const strong = i === 0 || i === rows.length - 1 ? " strong" : "";
+    return `<div class="row"><div class="name${strong}" title="${n}">${n}</div><div class="plot"><div class="b" id="b${i}"></div></div><div class="val" id="v${i}"></div></div>`;
+  }).join("");
+  built = true;
+}
+
+function snapshot(d) {
+  return { point: d.point, lower: d.lower, upper: d.upper, rel: d.rel_width, ref: d.reference, end: d.end, land: d.land, build: d.building, g: d.groups.map(x => x.value) };
+}
+function lerp(a, b, k) { return a + (b - a) * k; }
+function mix(A, B, k) { return { point: lerp(A.point, B.point, k), lower: lerp(A.lower, B.lower, k), upper: lerp(A.upper, B.upper, k), rel: lerp(A.rel, B.rel, k),
+  ref: lerp(A.ref, B.ref, k), end: lerp(A.end, B.end, k), land: lerp(A.land, B.land, k), build: lerp(A.build, B.build, k), g: A.g.map((v, i) => lerp(v, B.g[i], k)) }; }
+
+function draw(s, d) {
+  // price and interval
+  $("price").textContent = usd(s.point);
+  $("range").innerHTML = `80% range: <b>${usd(s.lower)}</b> – <b>${usd(s.upper)}</b>`;
+  const span = s.upper - s.lower, lo = s.lower - span * 0.22, hi = s.upper + span * 0.22, pos = v => (100 * (v - lo) / (hi - lo)) + "%";
+  $("band").style.left = pos(s.lower); $("band").style.width = (100 * span / (hi - lo)) + "%";
+  $("tl").style.left = pos(s.lower); $("tu").style.left = pos(s.upper); $("dot").style.left = pos(s.point);
+  [["ll", s.lower], ["lu", s.upper], ["lp", s.point]].forEach(([id, v]) => { $(id).style.left = pos(v); $(id).firstChild.textContent = usd(v); });
+  // gauge
+  const tau = d.tau, top = Math.max(0.6, s.rel * 1.15, tau * 1.5), gp = v => (100 * v / top) + "%";
+  $("gzone").style.width = gp(tau); $("gbar").style.width = gp(s.rel);
+  $("gtau").style.left = gp(tau); $("gtl").style.left = gp(tau); $("gtl").textContent = `AUTO up to ${Math.round(tau * 100)}%`;
+  $("gvl").style.left = gp(Math.min(s.rel, top * 0.93)); $("gvl").textContent = `${(s.rel * 100).toFixed(1)}%`;
+  const tv = (id, v) => { $(id).textContent = sgn(v); $(id).className = "v " + (v >= 0 ? "pos" : "neg"); };
+  tv("tland", s.land); tv("tbuild", s.build);
+  // waterfall
+  let run = s.ref, mn = Math.min(s.ref, s.end), mx = Math.max(s.ref, s.end);
+  const starts = [];
+  s.g.forEach(v => { starts.push(run); run += v; mn = Math.min(mn, run); mx = Math.max(mx, run); });
+  const pad = (mx - mn) * 0.12 + 1, a = mn - pad, bnd = mx + pad, wp = v => 100 * (v - a) / (bnd - a);
+  const setBar = (i, x0, x1, color) => { const el = $("b" + i); el.style.left = wp(Math.min(x0, x1)) + "%"; el.style.width = Math.abs(wp(x1) - wp(x0)) + "%"; el.style.background = color; };
+  setBar(0, a, s.ref, "var(--total)"); $("v0").textContent = usd(s.ref);
+  s.g.forEach((v, i) => { setBar(i + 1, starts[i], starts[i] + v, v >= 0 ? "var(--green)" : "var(--red)"); $("v" + (i + 1)).textContent = sgn(v); });
+  const last = s.g.length + 1; setBar(last, a, s.end, "var(--total)"); $("v" + last).textContent = usd(s.end);
+}
+
+function setStatic(d) {
+  const auto = d.route === "AUTO";
+  $("pill").className = "pill " + (auto ? "auto" : "esc"); $("pilltxt").textContent = auto ? "AUTO" : "ESCALATE";
+  $("recnote").textContent = auto ? "Estimate can be used automatically." : "Range is wide: have a human valuer review.";
+  $("gbar").className = "bar" + (auto ? "" : " esc");
+  $("gnote").textContent = d.gauge_note;
+  $("ev").innerHTML = (d.evidence || []).map(([k, v]) => `<div class="r"><span>${k}</span><b>${v}</b></div>`).join(""); $("wnote").textContent = d.waterfall_note;
+}
+
+function schedule(fn) { return document.hidden ? setTimeout(fn, 16) : requestAnimationFrame(fn); }   // rAF is throttled in hidden pages; a timer keeps the tween running
+function step() {
+  const k = clamp((performance.now() - t0) / DUR, 0, 1), s = mix(from, target, ease(k));
+  cur = s; draw(s, data);
+  if (k < 1) raf = schedule(step); else { raf = null; setHeight(); }
+}
+
+let data = null;
+function onRender(ev) {
+  const m = ev.data; if (m.type !== "streamlit:render") return;
+  applyTheme(m.theme);
+  const d = m.args.data; if (!d) return;
+  const first = !built;
+  if (first || d.groups.length !== names.length) buildRows(d.groups);
+  data = d; target = snapshot(d); setStatic(d);
+  if (first || cur === null) { cur = target; draw(cur, d); setHeight(); return; }
+  from = cur; t0 = performance.now();
+  if (raf) { cancelAnimationFrame(raf); clearTimeout(raf); }
+  raf = schedule(step);
+}
+window.addEventListener("message", onRender);
+window.addEventListener("resize", setHeight);
+send("streamlit:componentReady", { apiVersion: 1 });
+setHeight();
+</script>
+</body>
+</html>
