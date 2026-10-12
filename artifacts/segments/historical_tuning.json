@@ -1,0 +1,23 @@
+{
+  "gbr": {
+    "params": {
+      "n_estimators": 450,
+      "learning_rate": 0.05114956352628019,
+      "max_depth": 3,
+      "subsample": 0.6863570679143517,
+      "min_samples_leaf": 3
+    },
+    "inner_best_logrmse": 0.11900963506723461,
+    "n_trials": 50,
+    "training_houses": 947
+  },
+  "elasticnet": {
+    "params": {
+      "alpha": 0.001015158634558204,
+      "l1_ratio": 0.4383998373504898
+    },
+    "inner_best_logrmse": 0.13344116792781982,
+    "n_trials": 150,
+    "training_houses": 947
+  }
+}

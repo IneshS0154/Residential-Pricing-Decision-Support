@@ -1,0 +1,39 @@
+{
+  "experiment_id": "intervals_v1",
+  "timestamp": "2026-10-10T19:29:37",
+  "runtime_seconds": 32.6,
+  "alpha": 0.2,
+  "quantiles": [
+    0.1,
+    0.9
+  ],
+  "cal_fraction": 0.25,
+  "seed": 42,
+  "quantile_params": {
+    "n_estimators": 300,
+    "learning_rate": 0.05,
+    "max_depth": 3,
+    "subsample": 0.8,
+    "min_samples_leaf": 5
+  },
+  "quantile_params_regularised_sensitivity": {
+    "n_estimators": 100,
+    "learning_rate": 0.05,
+    "max_depth": 2,
+    "subsample": 0.8,
+    "min_samples_leaf": 20
+  },
+  "feature_set": "reduced",
+  "target": "log1p(SalePrice); conformity scores and corrections on the log1p scale",
+  "flagged_ids": [
+    524,
+    1299
+  ],
+  "temporal_split": "train YrSold <= 2008, test later",
+  "versions": {
+    "python": "3.14.2",
+    "sklearn": "1.9.1",
+    "numpy": "2.5.3",
+    "pandas": "3.0.6"
+  }
+}

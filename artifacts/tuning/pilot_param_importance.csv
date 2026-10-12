@@ -1,0 +1,8 @@
+family,outer_fold,param,importance
+elasticnet,0,alpha,0.754833837645317
+elasticnet,0,l1_ratio,0.24516616235468308
+gbr,0,learning_rate,0.6298678004018118
+gbr,0,subsample,0.09887438537378922
+gbr,0,max_depth,0.0950614557383533
+gbr,0,n_estimators,0.09366332165691646
+gbr,0,min_samples_leaf,0.08253303682912924
