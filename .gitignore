@@ -1,27 +1,5 @@
-# Data
-!data/raw/.gitkeep
-!data/processed/.gitkeep
-
-# Python
-__pycache__/
-*.py[cod]
-*.egg-info/
-.venv/
-venv/
-.ipynb_checkpoints/
-
-# OS
 .DS_Store
-
-# Jupyter
-*.ipynb_checkpoints
-
-# Reports (generated)
-reports/figures/*
-!reports/figures/.gitkeep
-
-# Other
-artifacts/*
-!artifacts/.gitkeep
-data/interim/*
-!data/interim/.gitkeep
+__pycache__/
+*.pyc
+.venv/
+.ipynb_checkpoints/

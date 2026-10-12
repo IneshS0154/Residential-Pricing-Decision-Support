@@ -1,0 +1,11 @@
+Evidence,Result,Evaluation Protocol,Business Meaning,Claim id
+Log-RMSE,0.1260 (SD 0.0126 over folds),"NESTED-CV, 15 outer folds",A Log-RMSE of 0.126 corresponds to a typical relative error of roughly 13%; the primary metric because errors scale with price,ACC-GBR-LOGRMSE
+MAE (USD),"$15,535",NESTED-CV,Average absolute error over evaluated houses; not a guarantee for any single house,ACC-GBR-MAE
+RMSE (USD),"$26,774",NESTED-CV,Penalises large errors; driven by expensive and atypical houses,ACC-GBR-RMSE
+MAPE,8.76%,NESTED-CV,"Average percentage error, not a maximum; emphasises cheap houses",ACC-GBR-MAPE
+R2 (USD scale),0.884,NESTED-CV,Share of price variance explained on the dollar scale,ACC-GBR-R2
+"Log-RMSE without Ids 524, 1299",0.1210,"NESTED-CV, evaluation-only exclusion",Sensitivity to two atypical sales; the primary result keeps them,OUT-GBR-NOFLAG-LOGRMSE
+"Log-RMSE, chronological holdout",0.1317 (n = 947 train / 513 test),TEMPORAL,Accuracy for later sales when trained only on earlier years,TEMP-GBR-LOGRMSE
+"MAE / MAPE, chronological holdout","$16,157 / 9.67%",TEMPORAL,"Same, in dollars and percent; test set excludes both atypical houses",TEMP-GBR-MAE
+"Log-RMSE, 30 random splits of the same sizes (fixed config)",0.1273 +/- 0.0087,DEV-CV,Benchmark for the temporal result with the same training size,RAND947-GBR-LOGRMSE-MEAN
+Interval coverage (80% nominal),80.7%,NESTED-style CQR,Marginal share of houses inside their interval,INT-CQR-COVERAGE

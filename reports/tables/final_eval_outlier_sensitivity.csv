@@ -1,0 +1,11 @@
+model,condition,rmse_log,mae,rmse_usd,mape,r2_usd
+Gradient Boosting (tuned),P  primary: all houses,0.126,15534.9336,26774.2365,8.7562,0.884
+Gradient Boosting (tuned),"E  evaluation-only exclusion of 524, 1299",0.121,15157.6602,24707.7435,8.5366,0.9017
+Gradient Boosting (tuned),T  training exclusion; scored on all houses,0.1267,15163.0806,28109.4542,8.6863,0.8684
+Gradient Boosting (tuned),"T  training exclusion; scored without 524, 1299",0.117,14500.3056,22766.2335,8.2969,0.917
+ElasticNet (tuned),P  primary: all houses,0.1307,16125.0995,32013.9607,9.0617,0.8217
+ElasticNet (tuned),"E  evaluation-only exclusion of 524, 1299",0.119,15299.2936,24703.8573,8.5671,0.9022
+ElasticNet (tuned),T  training exclusion; scored on all houses,0.1305,15896.294,33023.8694,9.0689,0.7953
+ElasticNet (tuned),"T  training exclusion; scored without 524, 1299",0.1167,14896.0988,23056.7843,8.4701,0.9149
+Lasso (fixed),P  primary: all houses,0.1295,16010.5859,31768.4918,8.9645,0.8249
+Lasso (fixed),"E  evaluation-only exclusion of 524, 1299",0.118,15200.7032,24729.1317,8.4794,0.9022
