@@ -28,3 +28,6 @@ artifacts/*
 !artifacts/serving/bundle_v1.joblib
 data/interim/*
 !data/interim/.gitkeep
+
+# Claude Code project instructions (local only)
+CLAUDE.md
