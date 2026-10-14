@@ -1,30 +1,16 @@
-# Data
-!data/raw/.gitkeep
-!data/processed/.gitkeep
-
-# Python
-__pycache__/
-*.py[cod]
-*.egg-info/
-.venv/
-venv/
-.ipynb_checkpoints/
-
-# OS
 .DS_Store
-
-# Jupyter
-*.ipynb_checkpoints
-
-# Reports (generated)
-reports/figures/*
-!reports/figures/.gitkeep
-
-# Other
+__pycache__/
+*.pyc
+.venv/
+.ipynb_checkpoints/
 artifacts/*
 !artifacts/.gitkeep
 # exported dashboard model bundle (regenerate with: python3 -m src.serving.export_model)
 !artifacts/serving/
 !artifacts/serving/bundle_v1.joblib
 data/interim/*
-!data/interim/.gitkeep
+data/processed/*
+!data/*/.gitkeep
+
+# Claude Code project instructions (local only)
+CLAUDE.md
