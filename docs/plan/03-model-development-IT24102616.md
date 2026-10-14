@@ -33,7 +33,7 @@ structure (defined here, but stratified by price band using insight from IT24103
    without extra correction (see `CLAUDE.md`).
 6. **Hyperparameter tuning** — search within the CV structure, never on the folds used for final
    reporting. Keep a tuning log (what was searched, what won, why).
-7. **Produce the price decomposition** — compute additive feature attributions (e.g. SHAP) that
+7. **Produce the price decomposition** — compute grouped feature importance (grouped permutation importance, grouped ablation, linear-model coefficients; SHAP is not used) that
    sum with a base value to exactly recover each prediction. Group the raw attributions into the
    business-meaningful categories (location, size, quality/condition, age, amenities), and
    produce the land-vs-structure summary (location+lot vs. building).

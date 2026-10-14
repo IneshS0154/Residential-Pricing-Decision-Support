@@ -42,8 +42,8 @@ def arrow(ax, p, q, rad=0.0):
 
 
 def main():
-    fig, ax = plt.subplots(figsize=(15, 8.6))
-    ax.set_xlim(0, 15); ax.set_ylim(0, 8.6); ax.axis("off")
+    fig, ax = plt.subplots(figsize=(15.6, 8.6))
+    ax.set_xlim(0, 15.6); ax.set_ylim(0, 8.6); ax.axis("off")
     w, h, gx = 3.2, 1.75, 0.65
     xs = [0.35 + i * (w + gx) for i in range(4)]
     ys = [6.05, 3.75, 1.45]
@@ -67,7 +67,9 @@ def main():
     ax.text(7.5, 8.35, "Implemented workflow: residential price prediction with intervals and AUTO / ESCALATE routing", ha="center", fontsize=12.5, fontweight="bold", color="#1f2d3d")
     ax.text(0.35, 0.95, "Shared by every modelling stage: same 15 folds (repeated 5-fold x 3, stratified by price band, seed 42)  |  target log1p(SalePrice)  |  sale-context variables are not predictors  |  all fitted steps inside one Pipeline per fold  |  no SHAP",
             fontsize=8.4, color="#1f2d3d")
-    ax.text(0.35, 0.55, "Open items (group approval pending, not applied): D2 exclude Ids 524 / 1299 from training;  D3 Neighborhood encoding.   Deviation from the initial submission: no per-property additive decomposition (grouped importance is used instead).",
+    ax.text(0.35, 0.62, "Group decisions: D2 leave Ids 524 / 1299 out of teaching;  D3 keep one-column-per-neighbourhood encoding;  D5 adopt the ElasticNet per-house split as the explanation panel;  D6 adopt the descriptive location-and-lot summary.  Still open: D7.",
+            fontsize=8.4, color="#9b1c1c")
+    ax.text(0.35, 0.38, "Deviation from the initial submission: exact per-property decomposition only for the ElasticNet (grouped importance for the chosen model); no land-versus-structure value split.",
             fontsize=8.4, color="#9b1c1c")
     ax.text(0.35, 0.15, "Recommendation: research prototype / controlled-pilot candidate, human-in-the-loop; no independent test set exists.", fontsize=8.4, color="#1f2d3d")
     OUT.parent.mkdir(parents=True, exist_ok=True)

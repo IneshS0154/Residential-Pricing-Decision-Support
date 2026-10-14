@@ -1,0 +1,77 @@
+{
+ "01_eda.ipynb": {
+  "2": "### 1.2 Duplicates, columns only in train, numeric vs categorical split",
+  "6": "### 3.3 Chart: NA / missing by column (hatched = feature absent)",
+  "9": "### 4.2 Chart: distributions of the main area variables",
+  "11": "### 5.2 Chart: price against key size and age variables (outliers marked)",
+  "12": "### 5.3 Chart: price by overall quality and overall condition",
+  "14": "### 6.2 Chart: price by neighbourhood",
+  "15": "### 6.3 Chart: median price by building class, sale condition and building type"
+ },
+ "02_preprocessing.ipynb": {
+  "12": "### 7.2 Recovery test: hide known LotFrontage values, impute, compare",
+  "14": "### 8.2 KNN settings (k, scaling, feature set) compared with the median imputers",
+  "16": "### 9.2 Strategy runner and comparison with vs without the missing indicator",
+  "18": "### 10.2 Encoded columns by branch and the ordinal mapping",
+  "20": "### 11.2 Check the engineered features",
+  "23": "### 12.2 Effect of the two outliers (Ids 524 and 1299) on a fixed Ridge",
+  "25": "### 13.2 Compare scalers (standard, robust, none)",
+  "10": "### 6.2 Mode vs an explicit \"Unknown\" level for Electrical (Id 1380)",
+  "29": "### 15.2 How a model attaches to the pipeline (fold 1 only)"
+ },
+ "03_feature_selection.ipynb": {
+  "7": "### 8.2 Chart: feature-group ablation (Ridge and Gradient Boosting)",
+  "10": "### 9.2 Lasso stability across feature sets (non-zero share per feature)",
+  "12": "### 10.2 Chart: Log-RMSE by model and feature set"
+ },
+ "04_baseline_model_comparison.ipynb": {
+  "4": "### 5.2 Chart: Log-RMSE per fold for each model (grey lines join the same fold)",
+  "5": "### 5.3 Chart: MAE and RMSE in USD",
+  "6": "### 5.4 Chart: accuracy versus fit time"
+ },
+ "05_hyperparameter_tuning.ipynb": {
+  "5": "### 5.2 Final-study settings and inner-CV optimum",
+  "8": "### 7.2 Chart: tuned versus untuned Log-RMSE, fold by fold",
+  "11": "### 9.2 Chart: parameter values against inner Log-RMSE (final-study trials)",
+  "12": "### 9.3 Chart: accuracy versus tuning cost"
+ },
+ "06_final_evaluation.ipynb": {
+  "9": "### 9.2 The same segments without the two flagged houses",
+  "10": "### 9.3 Chart: segment errors for the three models",
+  "12": "### 10.2 Chart: the 15 largest errors",
+  "14": "### 11.2 Chart: effect of excluding Ids 524 and 1299",
+  "20": "### 14.2 Chart: decision-matrix panels"
+ },
+ "07_prediction_intervals.ipynb": {
+  "3": "### 5.2 Chart: coverage and interval width, raw versus CQR",
+  "5": "### 6.2 Chart: interval width against predicted price",
+  "7": "### 7.2 Coverage by neighbourhood",
+  "8": "### 7.3 Chart: coverage by segment"
+ },
+ "08_segment_temporal_analysis.ipynb": {
+  "3": "### 3.2 Price segment: sensitivity checks (without flagged houses, ElasticNet, relative error)",
+  "4": "### 3.3 Chart: MAE by price band (predicted and actual)",
+  "6": "### 4.2 Quality tiers without the flagged houses, and the equal-variance test",
+  "7": "### 4.3 Chart: residuals by quality tier",
+  "9": "### 5.2 Chart: MAPE by neighbourhood",
+  "11": "### 6.2 Age: sensitivity, interval behaviour and error relationships",
+  "13": "### 7.2 Living area: sensitivity, deciles and error relationships",
+  "15": "### 8.2 Sale year: error and USD R2 by year",
+  "17": "### 9.2 Chart: random versus chronological Log-RMSE",
+  "20": "### 10.3 Chart: key feature distributions, training versus test years",
+  "22": "### 11.2 Chart: interval coverage by segment"
+ },
+ "09_auto_escalate_routing.ipynb": {
+  "6": "### 7.2 Chart: relative-width distribution and the chosen threshold",
+  "9": "### 9.2 Chart: AUTO share by neighbourhood"
+ },
+ "10_business_interpretation.ipynb": {
+  "6": "### 5.2 Chart: Log-RMSE of all models (nested and fixed)",
+  "8": "### 6.2 Chart: grouped permutation importance",
+  "9": "### 6.3 Regression coefficients of the final ElasticNet",
+  "11": "### 7.2 Interval coverage and width by segment (table)",
+  "12": "### 7.3 Chart: coverage by segment with recommendation class",
+  "15": "### 9.2 Chart: random versus chronological Log-RMSE (registry values)",
+  "17": "### 10.2 Chart and table: routing trade-off, nested policy against fixed thresholds"
+ }
+}
